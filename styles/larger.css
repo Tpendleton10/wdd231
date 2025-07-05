@@ -1,0 +1,11 @@
+@media (min-width: 640px) {
+  #navMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #menu {
+    display: none;
+  }
+}

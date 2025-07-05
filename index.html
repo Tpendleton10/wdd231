@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WDD231 Home Page" />
+  <meta name="author" content="Your Name" />
+  <title>WDD231 Home</title>
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/course.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="images/logo.svg" alt="Site Logo">
+    <span>Your Name</span>
+    <button id="menu">☰</button>
+  </header>
+
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="#">Chamber</a>
+    <a href="#">Final</a>
+  </nav>
+
+  <main>
+    <h1>Home</h1>
+
+    <section>
+      <h2>About This Site</h2>
+      <p>Description...</p>
+    </section>
+
+    <section>
+      <h2>Course Certificate</h2>
+      <div id="courseContainer"></div>
+      <div>
+        <button id="allBtn">All</button>
+        <button id="wddBtn">WDD</button>
+        <button id="cseBtn">CSE</button>
+        <p>Total Credits: <span id="creditTotal">0</span></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Resources</h2>
+      <p>Helpful links...</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; <span id="year"></span> Your Name, Your State
+    </p>
+    <p id="lastModified"></p>
+    <div>
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      <!-- Add other social links -->
+    </div>
+  </footer>
+</body>
+</html>
