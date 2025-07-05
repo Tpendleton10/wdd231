@@ -8,14 +8,17 @@
 
   <title>Ty Pendleton | WDD231 Course Homepage</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
+  <!-- CSS -->
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
 
+  <!-- JavaScript -->
   <script src="scripts/date.js" defer></script>
   <script src="scripts/navigation.js" defer></script>
   <script src="scripts/course.js" defer></script>
@@ -25,13 +28,16 @@
   <header>
     <img src="images/logo.svg" alt="Site Logo" width="50" height="50">
     <span>Ty Pendleton</span>
-    <button id="menu">☰</button>
+    <button id="menu" aria-label="Toggle navigation menu">☰</button>
   </header>
 
-  <nav id="navMenu">
-    <a href="index.html">Home</a>
-    <a href="#">Chamber</a>
-    <a href="#">Final</a>
+  <nav id="navMenu" role="navigation" aria-label="Primary navigation">
+    <ul>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="chamber.html">Chamber</a></li>
+      <li><a href="final.html">Final</a></li>
+      <li><a href="https://example.com/extra" target="_blank" rel="noopener noreferrer">Extra</a></li>
+    </ul>
   </nav>
 
   <main>
@@ -61,13 +67,13 @@
 
   <footer>
     <p>
-      &copy; <span id="year"></span> Your Name, Your State
+      &copy; <span id="year"></span> Ty Pendleton, Nevada
     </p>
     <p id="lastModified"></p>
     <div>
-      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-      <!-- Add other social links -->
+      <a href="https://github.com/Tpendleton10/wdd231" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
     </div>
   </footer>
 </body>

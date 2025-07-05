@@ -1,20 +1,60 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 1rem; /* add side padding to avoid text touching edges */
   background-color: #f9f9f9;
   font-family: 'Roboto', sans-serif;
 }
 
-
 header, nav, main, footer {
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
+/* Navigation menu hidden by default on small screens */
 #navMenu {
   display: none;
   flex-direction: column;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  margin-top: 0.5rem;
 }
 
+#navMenu.open {
+  display: flex;
+}
+
+/* Navigation links styling */
+#navMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#navMenu ul li {
+  margin: 0.5rem 0;
+}
+
+#navMenu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  display: block;
+  border-radius: 4px;
+}
+
+#navMenu ul li a:hover,
+#navMenu ul li a:focus,
+#navMenu ul li a[aria-current="page"] {
+  background-color: #007BFF;
+  color: white;
+  outline: none;
+}
+
+/* Hamburger menu button visible on small screens */
 #menu {
   display: block;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
 }

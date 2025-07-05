@@ -1,10 +1,39 @@
 @media (min-width: 640px) {
-  #navMenu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  body {
+    padding: 0 2rem; /* add more side padding */
   }
 
+  /* Show nav menu as horizontal flex */
+  #navMenu {
+    display: flex !important; /* override small.css */
+    flex-direction: row;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    margin-top: 0;
+  }
+
+  #navMenu ul {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  #navMenu ul li {
+    margin: 0;
+  }
+
+  #navMenu ul li a {
+    padding: 0.5rem 1rem;
+  }
+
+  #navMenu ul li a:hover,
+  #navMenu ul li a:focus,
+  #navMenu ul li a[aria-current="page"] {
+    background-color: #0056b3;
+    color: white;
+  }
+
+  /* Hide hamburger menu on larger screens */
   #menu {
     display: none;
   }
