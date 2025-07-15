@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 0 1rem; /* add side padding to avoid text touching edges */
+  padding: 0 1rem;
   background-color: #f9f9f9;
   font-family: 'Roboto', sans-serif;
 }
@@ -22,7 +22,6 @@ header, nav, main, footer {
   display: flex;
 }
 
-/* Navigation links styling */
 #navMenu ul {
   list-style: none;
   padding: 0;
@@ -35,7 +34,7 @@ header, nav, main, footer {
 
 #navMenu ul li a {
   text-decoration: none;
-  color: #333;
+  color: #111; /* improved contrast */
   font-weight: 600;
   padding: 0.5rem 1rem;
   display: block;
@@ -45,16 +44,54 @@ header, nav, main, footer {
 #navMenu ul li a:hover,
 #navMenu ul li a:focus,
 #navMenu ul li a[aria-current="page"] {
-  background-color: #007BFF;
-  color: white;
+  background-color: #0056b3;
+  color: #ffffff;
   outline: none;
 }
 
-/* Hamburger menu button visible on small screens */
 #menu {
   display: block;
   background: none;
   border: none;
   font-size: 2rem;
   cursor: pointer;
+}
+
+/* Course Card Styling */
+.course-card {
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: #f2f2f2;
+}
+
+/* Completed Course Styling */
+.course-card.completed {
+  background-color: #d4edda; /* light green */
+  color: #155724; /* dark green */
+  border-left: 5px solid #28a745;
+}
+
+/* Incomplete Course Styling */
+.course-card.incomplete {
+  background-color: #fff3cd; /* light yellow */
+  color: #856404; /* dark yellow */
+  border-left: 5px solid #ffc107;
+}
+
+/* Button Styling */
+button {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  margin: 0.25rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
