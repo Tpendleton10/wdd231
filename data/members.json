@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Sunrise Cafe",
+    "address": "123 Las Vegas Blvd, Las Vegas, NV",
+    "phone": "702‑123‑4567",
+    "website": "https://sunrisecafelvegas.com",
+    "image": "sunrisecafe.jpg",
+    "membership": 3,
+    "description": "Iconic breakfast place near the strip."
+  },
+  {
+    "name": "Famous Vintner",
+    "address": "456 Main St, Las Vegas, NV",
+    "phone": "702‑987‑6543",
+    "website": "https://famousvintner.com",
+    "image": "vintner.jpg",
+    "membership": 2,
+    "description": "Fine wines and tasting lounge."
+  },
+  {
+    "name": "Desert Tech Solutions",
+    "address": "789 Sahara Ave, Las Vegas, NV",
+    "phone": "702‑555‑1212",
+    "website": "https://deserttechlv.com",
+    "image": "deserttech.jpg",
+    "membership": 3,
+    "description": "IT support & consulting for small business."
+  },
+  {
+    "name": "Oasis Bookstore",
+    "address": "321 Fremont St, Las Vegas, NV",
+    "phone": "702‑333‑4444",
+    "website": "https://oasisbookstore.com",
+    "image": "oasis.jpg",
+    "membership": 1,
+    "description": "Independent bookstore & reading events."
+  },
+  {
+    "name": "Green Thumb Nursery",
+    "address": "654 Mojave Rd, Las Vegas, NV",
+    "phone": "702‑444‑5555",
+    "website": "https://greenthumblv.com",
+    "image": "greenthumb.jpg",
+    "membership": 2,
+    "description": "Local gardening supplies & workshops."
+  },
+  {
+    "name": "Vegas Fitness Center",
+    "address": "987 Strip Ave, Las Vegas, NV",
+    "phone": "702‑222‑3333",
+    "website": "https://vegasfitness.com",
+    "image": "fitness.jpg",
+    "membership": 3,
+    "description": "Gym with business wellness programs."
+  },
+  {
+    "name": "Silver State Law",
+    "address": "159 Casino Rd, Las Vegas, NV",
+    "phone": "702‑777‑8888",
+    "website": "https://silverstatelaw.com",
+    "image": "law.jpg",
+    "membership": 3,
+    "description": "Business law and consulting services."
+  }
+]

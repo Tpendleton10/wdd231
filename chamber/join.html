@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> … same head with join meta tags … </head>
+<body>
+<header>… nav …</header>
+<main>
+  <h2>Join the Las Vegas Chamber</h2>
+  <p>Choose your membership level to enjoy exclusive benefits:</p>
+  <ul>
+    <li><strong>Non‑Profit:</strong> basic listing + newsletter inclusion</li>
+    <li><strong>Silver:</strong> Silver + event access + social promotion</li>
+    <li><strong>Gold:</strong> Silver perks + sponsorships, advertising, luncheons</li>
+  </ul>
+  <form>
+    <label>Name<input type="text" name="name" required></label>
+    <label>Email<input type="email" name="email" required></label>
+    <fieldset>
+      <legend>Select Membership Level:</legend>
+      <label><input type="radio" name="level" value="1" required> Non‑Profit</label>
+      <label><input type="radio" name="level" value="2"> Silver</label>
+      <label><input type="radio" name="level" value="3"> Gold</label>
+    </fieldset>
+    <button type="submit">Apply Now</button>
+  </form>
+</main>
+<footer>…</footer>
+<script src="scripts/main.js"></script>
+</body>
+</html>

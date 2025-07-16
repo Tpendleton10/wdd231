@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Las Vegas Chamber of Commerce – promoting local businesses, networking, and community growth.">
+  <meta name="author" content="Ty Pendleton">
+  <meta property="og:title" content="Las Vegas Chamber of Commerce">
+  <meta property="og:description" content="Connect, grow, and discover Las Vegas local businesses." />
+  <meta property="og:image" content="images/og-image.jpg" />
+  <meta property="og:url" content="https://yourgithub.io/wdd231/chamber/index.html" />
+  <title>Las Vegas Chamber | Home</title>
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <h1>Las Vegas Chamber of Commerce</h1>
+  <nav>
+    <button id="menuToggle">☰ Menu</button>
+    <ul id="navList">
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="discover.html">Discover</a></li>
+      <li><a href="directory.html">Directory</a></li>
+      <li><a href="join.html">Join</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h2>Welcome to the Las Vegas Business Community</h2>
+    <p>Connecting entrepreneurs, professionals, and the community to grow together.</p>
+    <a href="join.html" class="cta-button">Join Now</a>
+  </section>
+
+  <section class="spotlight">
+    <h2>Business Spotlight</h2>
+    <div class="spotlight-cards">
+      <article>
+        <img src="images/sunrisecafe.jpg" alt="Sunrise Cafe logo">
+        <h3>Sunrise Cafe</h3>
+        <p>Local breakfast favorite on Las Vegas Boulevard.</p>
+      </article>
+      <article>
+        <img src="images/vintner.jpg" alt="Vintner logo">
+        <h3>Famous Vintner</h3>
+        <p>Premium wine shop and tasting room in downtown.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="weather-cta">
+    <div id="weather"></div>
+    <a href="directory.html" class="cta-button">Explore Local Businesses</a>
+  </section>
+</main>
+
+<footer>
+  <p>Contact: info@lvchamber.org | (702) 555‑1234</p>
+  <p>&copy; <span id="year"></span> | Your Name | WDD 231 | Last Modified: <span id="lastModified"></span></p>
+</footer>
+
+<script src="scripts/main.js"></script>
+<script src="scripts/discovery.js"></script>
+<script src="scripts/directory.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+</body>
+</html>
