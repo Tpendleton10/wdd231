@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Sunrise Cafe",
+    "address": "123 Sunrise Blvd, Las Vegas, NV",
+    "phone": "(702) 123-4567",
+    "website": "https://sunrisecafe.example.com",
+    "image": "sunrisecafe.jpg",
+    "membership": 1,
+    "description": "A cozy breakfast spot in the heart of Las Vegas."
+  },
+  {
+    "name": "Vintner Wine Co.",
+    "address": "456 Vine St, Las Vegas, NV",
+    "phone": "(702) 234-5678",
+    "website": "https://vintnerwine.example.com",
+    "image": "vintner.jpg",
+    "membership": 3,
+    "description": "Downtown's favorite wine tasting room and shop."
+  },
+  {
+    "name": "TechZone Solutions",
+    "address": "789 Tech Park, Las Vegas, NV",
+    "phone": "(702) 345-6789",
+    "website": "https://techzone.com",
+    "image": "techzone.jpg",
+    "membership": 2,
+    "description": "IT and networking support for small businesses."
+  },
+  {
+    "name": "Bright Futures Preschool",
+    "address": "101 Sunshine Rd, Las Vegas, NV",
+    "phone": "(702) 456-7890",
+    "website": "https://brightfutureslv.org",
+    "image": "brightfutures.jpg",
+    "membership": 1,
+    "description": "Early childhood education with a caring touch."
+  },
+  {
+    "name": "Desert Fitness",
+    "address": "202 Health Blvd, Las Vegas, NV",
+    "phone": "(702) 567-8901",
+    "website": "https://desertfitness.com",
+    "image": "desertfitness.jpg",
+    "membership": 2,
+    "description": "Modern gym with personal training and group classes."
+  },
+  {
+    "name": "Vegas Art Gallery",
+    "address": "303 Creative Lane, Las Vegas, NV",
+    "phone": "(702) 678-9012",
+    "website": "https://vegasartgallery.com",
+    "image": "artgallery.jpg",
+    "membership": 3,
+    "description": "Showcasing local artists and community creativity."
+  },
+  {
+    "name": "Green Earth Landscaping",
+    "address": "404 Garden Ave, Las Vegas, NV",
+    "phone": "(702) 789-0123",
+    "website": "https://greenearthlandscaping.com",
+    "image": "greenearth.jpg",
+    "membership": 1,
+    "description": "Sustainable landscaping and lawn care services."
+  }
+]

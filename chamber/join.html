@@ -1,29 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> … same head with join meta tags … </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join the Las Vegas Chamber</title>
+  <meta name="description" content="Apply to join the Las Vegas Chamber of Commerce and enjoy exclusive membership benefits." />
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+</head>
 <body>
-<header>… nav …</header>
-<main>
-  <h2>Join the Las Vegas Chamber</h2>
-  <p>Choose your membership level to enjoy exclusive benefits:</p>
-  <ul>
-    <li><strong>Non‑Profit:</strong> basic listing + newsletter inclusion</li>
-    <li><strong>Silver:</strong> Silver + event access + social promotion</li>
-    <li><strong>Gold:</strong> Silver perks + sponsorships, advertising, luncheons</li>
-  </ul>
-  <form>
-    <label>Name<input type="text" name="name" required></label>
-    <label>Email<input type="email" name="email" required></label>
-    <fieldset>
-      <legend>Select Membership Level:</legend>
-      <label><input type="radio" name="level" value="1" required> Non‑Profit</label>
-      <label><input type="radio" name="level" value="2"> Silver</label>
-      <label><input type="radio" name="level" value="3"> Gold</label>
-    </fieldset>
-    <button type="submit">Apply Now</button>
-  </form>
-</main>
-<footer>…</footer>
-<script src="scripts/main.js"></script>
+  <header>
+    <h1>Las Vegas Chamber of Commerce</h1>
+    <nav>
+      <button id="menuToggle">☰ Menu</button>
+      <ul id="navList">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a class="active" href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Join the Las Vegas Chamber</h1>
+    <p>Choose your membership level to enjoy exclusive benefits:</p>
+    <ul>
+      <li><strong>Non-Profit:</strong> basic listing + newsletter inclusion</li>
+      <li><strong>Silver:</strong> Silver + event access + social promotion</li>
+      <li><strong>Gold:</strong> Silver perks + sponsorships, advertising, luncheons</li>
+    </ul>
+
+    <form>
+      <div>
+        <label for="name">Name</label><br />
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div>
+        <label for="email">Email</label><br />
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <fieldset>
+        <legend>Select Membership Level:</legend>
+        <div>
+          <input type="radio" id="level1" name="level" value="1" required />
+          <label for="level1">Non-Profit</label>
+        </div>
+        <div>
+          <input type="radio" id="level2" name="level" value="2" />
+          <label for="level2">Silver</label>
+        </div>
+        <div>
+          <input type="radio" id="level3" name="level" value="3" />
+          <label for="level3">Gold</label>
+        </div>
+      </fieldset>
+
+      <button type="submit">Apply Now</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Contact us: info@lvchamber.org | (702) 555-1234</p>
+    <p>&copy; <span id="year"></span> Las Vegas Chamber | WDD 231 | Last Modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <script src="scripts/main.js"></script>
 </body>
 </html>
