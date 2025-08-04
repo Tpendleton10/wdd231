@@ -23,44 +23,75 @@
     </nav>
   </header>
 
-  <main>
-    <h1>Join the Las Vegas Chamber</h1>
-    <p>Choose your membership level to enjoy exclusive benefits:</p>
-    <ul>
-      <li><strong>Non-Profit:</strong> basic listing + newsletter inclusion</li>
-      <li><strong>Silver:</strong> Silver + event access + social promotion</li>
-      <li><strong>Gold:</strong> Silver perks + sponsorships, advertising, luncheons</li>
-    </ul>
+  <main class="container">
+    <section class="form-section">
+      <h2>Membership Application</h2>
+      <form method="get" action="thankyou.html">
+        <label>
+          First Name:
+          <input type="text" name="firstName" title="Enter your first name" required autocomplete="given-name">
+        </label>
+        <label>
+          Last Name:
+          <input type="text" name="lastName" title="Enter your last name" required autocomplete="family-name">
+        </label>
+        <label>
+          Title:
+          <input type="text" name="title" title="Your organizational title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
+        </label>
+        <label>
+          Email:
+          <input type="email" name="email" title="Enter a valid email" required autocomplete="email" placeholder="example@domain.com">
+        </label>
+        <label>
+          Mobile Phone:
+          <input type="tel" name="phone" title="Mobile phone number" required autocomplete="tel">
+        </label>
+        <label>
+          Organization Name:
+          <input type="text" name="organization" title="Business or organization name" required autocomplete="organization">
+        </label>
+        <label>
+          Membership Level:
+          <select name="membershipLevel" title="Select your membership level" required>
+            <option value="" disabled selected>Select a level</option>
+            <option value="NP">NP Membership</option>
+            <option value="Bronze">Bronze</option>
+            <option value="Silver">Silver</option>
+            <option value="Gold">Gold</option>
+          </select>
+        </label>
+        <label>
+          Description of Organization:
+          <textarea name="description" title="Brief description of your business or organization"></textarea>
+        </label>
+        <input type="hidden" name="timestamp" id="timestamp">
+        <input type="submit" value="Apply Now">
+      </form>
+    </section>
 
-    <form>
-      <div>
-        <label for="name">Name</label><br />
-        <input type="text" id="name" name="name" required />
+    <section class="cards-section">
+      <div class="membership-card">
+        <h3>NP Membership</h3>
+        <p>No fee. Basic listing and newsletter inclusion.</p>
+        <a href="#" class="modal-trigger" data-modal="modal-np">Learn more</a>
       </div>
-
-      <div>
-        <label for="email">Email</label><br />
-        <input type="email" id="email" name="email" required />
+      <div class="membership-card">
+        <h3>Bronze Membership</h3>
+        <p>Includes training events and basic advertising.</p>
+        <a href="#" class="modal-trigger" data-modal="modal-bronze">Learn more</a>
       </div>
-
-      <fieldset>
-        <legend>Select Membership Level:</legend>
-        <div>
-          <input type="radio" id="level1" name="level" value="1" required />
-          <label for="level1">Non-Profit</label>
-        </div>
-        <div>
-          <input type="radio" id="level2" name="level" value="2" />
-          <label for="level2">Silver</label>
-        </div>
-        <div>
-          <input type="radio" id="level3" name="level" value="3" />
-          <label for="level3">Gold</label>
-        </div>
-      </fieldset>
-
-      <button type="submit">Apply Now</button>
-    </form>
+      <div class="membership-card">
+        <h3>Silver Membership</h3>
+        <p>Event access, spotlight features, and social media promotion.</p>
+        <a href="#" class="modal-trigger" data-modal="modal-silver">Learn more</a>
+      </div>
+      <div class="membership-card">
+        <h3>Gold Membership</h3>
+        <p>Premium sponsorships, ads, luncheons, top homepage listing.</p>
+        <a href="#" class="modal-trigger" data-modal="modal-gold">Learn more</a>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -68,6 +99,44 @@
     <p>&copy; <span id="year"></span> Las Vegas Chamber | WDD 231 | Last Modified: <span id="lastModified"></span></p>
   </footer>
 
-  <script src="scripts/main.js"></script>
+  <!-- Modals -->
+  <div id="modal-np" class="modal"><div class="modal-content"><span class="close">&times;</span><p>Non-Profit Membership includes basic listing and newsletter inclusion.</p></div></div>
+  <div id="modal-bronze" class="modal"><div class="modal-content"><span class="close">&times;</span><p>Bronze benefits: training events, ads, and community inclusion.</p></div></div>
+  <div id="modal-silver" class="modal"><div class="modal-content"><span class="close">&times;</span><p>Silver benefits: event access, social promotions, and homepage spotlight.</p></div></div>
+  <div id="modal-gold" class="modal"><div class="modal-content"><span class="close">&times;</span><p>Gold includes all other benefits plus premium sponsorships and luncheons.</p></div></div>
+
+  <script>
+    // Timestamp for hidden field
+    document.getElementById('timestamp').value = new Date().toISOString();
+
+    // Modal logic
+    const triggers = document.querySelectorAll('.modal-trigger');
+    const modals = document.querySelectorAll('.modal');
+    const closes = document.querySelectorAll('.close');
+
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', e => {
+        e.preventDefault();
+        const modalId = trigger.dataset.modal;
+        document.getElementById(modalId).style.display = 'block';
+      });
+    });
+
+    closes.forEach(close => {
+      close.addEventListener('click', () => {
+        modals.forEach(modal => modal.style.display = 'none');
+      });
+    });
+
+    window.addEventListener('click', e => {
+      if (e.target.classList.contains('modal')) {
+        e.target.style.display = 'none';
+      }
+    });
+
+    // Footer Info
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('lastModified').textContent = document.lastModified;
+  </script>
 </body>
 </html>

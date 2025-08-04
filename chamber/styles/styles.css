@@ -131,3 +131,196 @@ nav a.active {
 .level-1 {
   background: var(--primary);
 }
+
+/* Thank You Page */
+.thankyou-message {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.thankyou-message h2 {
+  color: green;
+}
+
+.form-data {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.form-data p {
+  margin: 0.5rem 0;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background: white;
+  margin: 10% auto;
+  padding: 20px;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+/* Membership Form Layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.form-section, .cards-section {
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+/* Membership Cards */
+.membership-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #f9f9f9;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+.membership-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.membership-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.membership-card:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Join Page Layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.form-section,
+.cards-section {
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+/* Form Styling */
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+form input,
+form select,
+form textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+form input[type="submit"],
+form button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  margin-top: 1rem;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+}
+
+/* Membership Cards */
+.membership-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #f9f9f9;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+.membership-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.membership-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.membership-card:nth-child(4) {
+  animation-delay: 0.9s;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+  background: white;
+  margin: 10% auto;
+  padding: 20px;
+  max-width: 500px;
+  border-radius: 10px;
+}
+.close {
+  float: right;
+  cursor: pointer;
+  font-size: 1.2em;
+}

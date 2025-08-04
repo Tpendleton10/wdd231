@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You - Las Vegas Chamber</title>
+  <meta name="description" content="Thank you for applying to join the Las Vegas Chamber of Commerce." />
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <header>
+    <h1>Las Vegas Chamber of Commerce</h1>
+    <nav>
+      <button id="menuToggle">☰ Menu</button>
+      <ul id="navList">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a class="active" href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="thankyou-message">
+    <h2>Thank You for Applying!</h2>
+    <p>We’ve received your membership application. Here is the information you submitted:</p>
+
+    <div class="form-data" id="formData">
+    </div>
+  </main>
+
+  <footer>
+    <p>Contact us: info@lvchamber.org | (702) 555-1234</p>
+    <p>&copy; <span id="year"></span> Las Vegas Chamber | WDD 231 | Last Modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('lastModified').textContent = document.lastModified;
+
+    const params = new URLSearchParams(window.location.search);
+    const requiredFields = {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Mobile Phone",
+      "organization": "Organization Name",
+      "timestamp": "Submitted At"
+    };
+
+    const formDataContainer = document.getElementById('formData');
+
+    Object.keys(requiredFields).forEach(field => {
+      const value = params.get(field);
+      if (value) {
+        const p = document.createElement('p');
+        p.innerHTML = `<strong>${requiredFields[field]}:</strong> ${decodeURIComponent(value)}`;
+        formDataContainer.appendChild(p);
+      }
+    });
+  </script>
+</body>
+</html>
