@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fitness Workout Tracker - Site Plan</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<h1>Fitness Workout Tracker — Website Plan</h1>
+
+<section>
+  <h2>Site Name</h2>
+  <p><strong>FitPulse</strong></p>
+  <p>This name reflects the core purpose of the site: tracking fitness workouts and progress, syncing with the user's pulse on their fitness journey. The name is catchy, modern, and easy to remember.</p>
+</section>
+
+<section>
+  <h2>Site Purpose</h2>
+  <p>FitPulse is designed to provide users with workout plans and exercise information while enabling them to track their workout progress dynamically. Users can browse different workout routines, view detailed exercise instructions, and log their completed workouts.</p>
+</section>
+
+<section>
+  <h2>Scenarios</h2>
+  <ul>
+    <li>Which workout plan is best suited for beginners looking to build muscle?</li>
+    <li>How can I log my daily workouts and track progress over time?</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Color Schema</h2>
+  <p>The site will use a clean, motivating color scheme focused on energizing blues and calming neutrals.</p>
+  <ul>
+    <li><strong>Primary Blue</strong>: #0077b6 <span class="color-swatch" style="background:#0077b6;"></span> — Used for headers, buttons, and accents.</li>
+    <li><strong>Soft Gray</strong>: #f0f4f8 <span class="color-swatch" style="background:#f0f4f8;"></span> — Background color for page and sections.</li>
+    <li><strong>Dark Slate</strong>: #023047 <span class="color-swatch" style="background:#023047;"></span> — Used for body text and footer.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Typography</h2>
+  <ul>
+    <li><strong>“Montserrat”</strong> — Headings and buttons (modern, strong sans-serif)</li>
+    <li><strong>“Open Sans”</strong> — Body text and paragraphs (clean, readable sans-serif)</li>
+    <li><strong>“Roboto Mono”</strong> — Special code blocks or workout stats (monospace for clarity)</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Wireframe</h2>
+  <p><strong>Home Page (Desktop):</strong></p>
+  <ul>
+    <li>Header with logo and navigation links (Home, Workouts, Progress)</li>
+    <li>Hero section with motivating image and call to action</li>
+    <li>Workout plans grid (15+ workout cards, each showing workout name, type, duration, difficulty)</li>
+    <li>Footer with social links, attribution, and video link</li>
+  </ul>
+  <p><strong>Home Page (Mobile):</strong></p>
+  <ul>
+    <li>Hamburger menu for navigation</li>
+    <li>Stacked workout cards with touch-friendly spacing</li>
+  </ul>
+  <p><strong>Workout Details Modal:</strong></p>
+  <ul>
+    <li>Exercise list with instructions and images</li>
+    <li>Button to log workout progress</li>
+  </ul>
+
+  <figure>
+    <img src="images/wireframe.png" alt="Desktop wireframe of the FitPulse homepage" style="max-width: 100%; height: auto;" />
+    <figcaption>Figure: Desktop layout wireframe of the FitPulse home page</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>CSS Plan</h2>
+  <p>Use external CSS file with:</p>
+  <ul>
+    <li>Responsive grid/flexbox for workout cards</li>
+    <li>Hamburger menu for small screen navigation</li>
+    <li>Color variables for theme consistency</li>
+    <li>Accessible focus states and hover styles</li>
+  </ul>
+</section>
+
+<section>
+  <h2>JavaScript Features</h2>
+  <ul>
+    <li><strong>Data Fetching:</strong> Load workout plans and exercise data from a local JSON file asynchronously using Fetch API with try...catch error handling.</li>
+    <li><strong>Dynamic Content Generation:</strong> Generate and display 15+ workout cards dynamically with details such as name, type, duration, and difficulty.</li>
+    <li><strong>Local Storage:</strong> Save user's logged workouts and preferences locally so progress persists across sessions.</li>
+    <li><strong>Modal Dialogs:</strong> Use accessible modals for workout detail views and workout logging forms.</li>
+    <li><strong>DOM Manipulation & Event Handling:</strong> Add event listeners for opening modals, submitting forms, and filtering workouts.</li>
+    <li><strong>Array Methods:</strong> Use array methods like filter and map to filter workout types and render cards.</li>
+    <li><strong>Template Literals:</strong> Construct dynamic HTML content for workout cards and modal content.</li>
+    <li><strong>ES Modules:</strong> Organize JavaScript into modules: data fetching, UI rendering, local storage handling, event listeners.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Accessibility & SEO</h2>
+  <ul>
+    <li>Semantic HTML5 tags (header, nav, main, footer)</li>
+    <li>Keyboard navigable modals and form elements</li>
+    <li>Alt text for all images</li>
+    <li>Meta tags for SEO (title, description, author)</li>
+    <li>Open Graph tags for social sharing</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Form</h2>
+  <p>Include a workout log form that collects date, workout type, duration, and notes. Form submission data is displayed on a separate form action page (not counted in page total) and saved to local storage.</p>
+</section>
+
+<section>
+  <h2>Testing and Validation</h2>
+  <ul>
+    <li>Validate HTML and CSS for standards compliance</li>
+    <li>Test responsiveness on various screen sizes</li>
+    <li>Check color contrast for accessibility</li>
+    <li>Test keyboard navigation and screen reader compatibility</li>
+    <li>Performance checks to keep page size under 500kB</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Professionalism and Attributions</h2>
+  <p>Proofread all content for grammar and spelling.</p>
+  <p>Include an Attributions link in footer to cite any external data sources or images used.</p>
+</section>
+
+</body>
+</html>
