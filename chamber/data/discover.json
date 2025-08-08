@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Red Rock Canyon",
+    "image": "images/redrock.jpg",
+    "address": "1000 Scenic Loop Dr, Las Vegas, NV 89161",
+    "description": "Explore the stunning desert landscape with hiking trails, rock formations, and scenic views."
+  },
+  {
+    "name": "Fremont Street Experience",
+    "image": "images/freemont.jpg",
+    "address": "425 Fremont St, Las Vegas, NV 89101",
+    "description": "A vibrant pedestrian mall with live music, zip lines, and a massive LED light canopy."
+  },
+  {
+    "name": "The Neon Museum",
+    "image": "images/neon.jpg",
+    "address": "770 Las Vegas Blvd N, Las Vegas, NV 89101",
+    "description": "Preserving iconic Las Vegas signs in a unique and colorful outdoor museum."
+  },
+  {
+    "name": "Bellagio Conservatory & Botanical Gardens",
+    "image": "images/bellagio.jpg",
+    "address": "3600 S Las Vegas Blvd, Las Vegas, NV 89109",
+    "description": "A beautifully themed botanical garden located inside the Bellagio resort."
+  },
+  {
+    "name": "Hoover Dam",
+    "image": "images/hoover-dam.jpg",
+    "address": "Hoover Dam Access Rd, Boulder City, NV 89005",
+    "description": "A marvel of engineering on the Nevada-Arizona border with tours and scenic views."
+  },
+  {
+    "name": "Las Vegas Natural History Museum",
+    "image": "images/history.jpg",
+    "address": "900 Las Vegas Blvd N, Las Vegas, NV 89101",
+    "description": "Discover exhibits on dinosaurs, marine life, ancient Egypt, and more."
+  },
+  {
+    "name": "Springs Preserve",
+    "image": "images/springs.jpg",
+    "address": "333 S Valley View Blvd, Las Vegas, NV 89107",
+    "description": "A cultural and historical attraction with botanical gardens, museum exhibits, and trails."
+  },
+  {
+    "name": "High Roller Observation Wheel",
+    "image": "images/highroller.jpg",
+    "address": "3545 S Las Vegas Blvd, Las Vegas, NV 89109",
+    "description": "Experience panoramic views of Las Vegas from the world’s second-tallest observation wheel."
+  }
+]

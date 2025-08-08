@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discover Las Vegas - Chamber of Commerce</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script defer src="scripts/visit.js"></script>
+  <script defer src="scripts/discover.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Las Vegas Chamber of Commerce</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="discover.html" class="active">Discover</a>
+    <a href="directory.html">Directory</a>
+    <a href="join.html">Join</a>
+  </nav>
+
+  <main id="discover">
+    <aside id="visitor-info" class="sidebar-message"></aside>
+
+    <section class="gallery-grid" id="places-container">
+      <!-- Cards will be inserted here dynamically -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Las Vegas Chamber | Last Modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <script>
+    // Footer dynamic year
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("lastModified").textContent = document.lastModified;
+  </script>
+</body>
+</html>
