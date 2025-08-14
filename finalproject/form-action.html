@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Workout Log Submitted - FitPulse</title>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/small.css" media="screen and (max-width: 600px)" />
+  <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 601px)" />
+  <meta name="description" content="Your workout log submission confirmation." />
+  <meta name="author" content="Your Name" />
+  <link rel="icon" href="images/gym.png" type="image/x-icon" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workouts.html">Workouts</a></li>
+        <li><a href="progress.html">Progress</a></li>
+        <li><a href="form.html">Log Workout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Workout Log Submitted</h1>
+    <section id="submitted-data">
+      <!-- Submitted form data will be shown here -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Name</p>
+    <p><a href="attributions.html">Attributions</a></p>
+    <p><a href="https://youtu.be/your-video-link" target="_blank" rel="noopener">Project Demo Video</a></p>
+  </footer>
+
+  <script>
+    function displaySubmittedData() {
+      const params = new URLSearchParams(window.location.search);
+      const date = params.get('date') || 'N/A';
+      const workoutName = params.get('workout-name') || 'N/A';
+      const duration = params.get('duration') || 'N/A';
+      const notes = params.get('notes') || 'N/A';
+
+      // Save to localStorage for progress tracking
+      let loggedWorkouts = JSON.parse(localStorage.getItem('loggedWorkouts')) || [];
+      loggedWorkouts.push({ date, name: workoutName, duration, notes });
+      localStorage.setItem('loggedWorkouts', JSON.stringify(loggedWorkouts));
+
+      const section = document.getElementById('submitted-data');
+      section.innerHTML = `
+        <p><strong>Date:</strong> ${date}</p>
+        <p><strong>Workout Name:</strong> ${workoutName}</p>
+        <p><strong>Duration:</strong> ${duration} minutes</p>
+        <p><strong>Notes:</strong> ${notes}</p>
+        <p>Thank you for logging your workout! Your progress has been saved.</p>
+        <p><a href="progress.html">View your progress</a></p>
+      `;
+    }
+
+    window.addEventListener('DOMContentLoaded', displaySubmittedData);
+  </script>
+</body>
+</html>

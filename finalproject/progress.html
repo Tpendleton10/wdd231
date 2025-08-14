@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Progress — FitPulse</title>
+  <meta name="description" content="View your logged workouts and track your fitness progress with FitPulse." />
+  <meta name="author" content="Ty Pendleton" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Progress — FitPulse" />
+  <meta property="og:description" content="View your logged workouts and track your fitness progress with FitPulse." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourgithubusername.github.io/finalproject/progress.html" />
+  <meta property="og:image" content="../images/fitpulse-og-image.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/gym.png" type="image/x-icon" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/large.css" />
+  <link rel="stylesheet" href="styles/small.css" media="screen and (min-width: 601px)" />
+</head>
+
+<body>
+  <header>
+    <h1>FitPulse</h1>
+    <nav aria-label="Primary navigation">
+      <button id="hamburger" aria-expanded="false" aria-controls="primary-navigation" aria-label="Menu">
+        &#9776;
+      </button>
+      <ul id="primary-navigation" class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workouts.html">Workouts</a></li>
+        <li><a href="progress.html" aria-current="page">Progress</a></li>
+        <li><a href="attributions.html">Attributions</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-label="Workout progress">
+      <h2>Your Workout Progress</h2>
+      <div id="progress-list">
+        <!-- Dynamically generated progress entries from local storage -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Ty Pendleton</p>
+    <p><a href="attributions.html">Attributions</a></p>
+  </footer>
+
+  <script type="module" src="scripts/main.js"></script>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.querySelector('.nav-list');
+    hamburger?.addEventListener('click', () => {
+      navList.classList.toggle('active');
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!expanded));
+    });
+  </script>
+</body>
+</html>

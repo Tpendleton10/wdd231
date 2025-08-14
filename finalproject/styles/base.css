@@ -1,0 +1,110 @@
+/* base.css */
+
+/* Color variables */
+:root {
+  --primary-blue: #0077b6;
+  --soft-gray: #f0f4f8;
+  --dark-slate: #023047;
+  --text-color: #333333;
+  --background-color: var(--soft-gray);
+  --focus-outline: 3px solid var(--primary-blue);
+}
+
+/* Global resets and base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 1rem 2rem;
+  line-height: 1.6;
+  font-size: 16px;
+  min-height: 100vh;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--primary-blue);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  line-height: 1.25;
+}
+
+/* Links */
+a {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Buttons */
+button, .button {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  background-color: #005f73;
+  outline: none;
+}
+
+/* Sections */
+section {
+  margin-bottom: 2rem;
+}
+
+/* Color swatch for color demo */
+.color-swatch {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Focus outline for accessibility */
+:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+
+/* Utility classes */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

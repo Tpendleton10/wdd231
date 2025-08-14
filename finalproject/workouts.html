@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FitPulse — Fitness Workout Tracker</title>
-  <meta name="description" content="FitPulse helps you track workouts, explore exercise plans, and monitor your fitness progress." />
+  <title>Workouts — FitPulse</title>
+  <meta name="description" content="Browse and filter detailed workout plans on FitPulse." />
   <meta name="author" content="Ty Pendleton" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="FitPulse — Fitness Workout Tracker" />
-  <meta property="og:description" content="Track workouts, explore exercise plans, and monitor your fitness progress." />
+  <meta property="og:title" content="Workouts — FitPulse" />
+  <meta property="og:description" content="Browse and filter detailed workout plans on FitPulse." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourgithubusername.github.io/finalproject/" />
-  <meta property="og:image" content="images/fitpulse-og-image.png" />
+  <meta property="og:url" content="https://Tpendleton10.github.io/finalproject/workouts.html" />
+  <meta property="og:image" content="images/sunrise.jpg" />
 
   <!-- Favicon -->
   <link rel="icon" href="images/gym.png" type="image/x-icon" />
@@ -32,8 +32,8 @@
         &#9776;
       </button>
       <ul id="primary-navigation" class="nav-list">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="workouts.html">Workouts</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workouts.html" aria-current="page">Workouts</a></li>
         <li><a href="progress.html">Progress</a></li>
         <li><a href="attributions.html">Attributions</a></li>
       </ul>
@@ -41,17 +41,23 @@
   </header>
 
   <main>
-    <section id="hero" tabindex="-1">
-      <h2>Your Fitness Journey Starts Here</h2>
-      <p>Explore workout plans, track your progress, and stay motivated with FitPulse.</p>
-      <img src="images/hero.webp" alt="Workout Collage" loading="lazy" />
+    <section aria-label="Workout filter">
+      <h2>Filter Workouts</h2>
+      <form id="filter-form">
+        <label for="type-filter">Type:</label>
+        <select id="type-filter" name="type-filter">
+          <option value="all">All</option>
+          <option value="cardio">Cardio</option>
+          <option value="strength">Strength</option>
+          <option value="flexibility">Flexibility</option>
+          <!-- Add more types as needed -->
+        </select>
+        <button type="submit">Apply Filter</button>
+      </form>
     </section>
 
-    <section id="workouts" aria-label="Workout plans">
-      <h2>Workout Plans</h2>
-      <div id="workouts-container" tabindex="0">
-        <!-- Dynamic workout cards will be inserted here by JavaScript -->
-      </div>
+    <section id="workouts-list" aria-label="Filtered workouts">
+      <!-- Dynamically generated workout cards filtered by type -->
     </section>
 
     <!-- Modal for workout details -->
@@ -59,9 +65,7 @@
       <div class="modal-content">
         <button id="modal-close" aria-label="Close modal">&times;</button>
         <h3 id="modal-title">Workout Details</h3>
-        <div id="modal-desc">
-          <!-- Dynamic content about workout details will go here -->
-        </div>
+        <div id="modal-desc"></div>
       </div>
     </div>
   </main>
@@ -71,10 +75,8 @@
     <p><a href="attributions.html">Attributions</a></p>
   </footer>
 
-  <!-- JavaScript Modules -->
   <script type="module" src="scripts/main.js"></script>
 
-  <!-- Hamburger menu script fallback -->
   <script>
     const hamburger = document.getElementById('hamburger');
     const navList = document.querySelector('.nav-list');

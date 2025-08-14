@@ -1,0 +1,193 @@
+[
+  {
+    "id": 1,
+    "name": "Beginner Full Body",
+    "type": "Strength",
+    "duration": 30,
+    "difficulty": "Easy",
+    "description": "A beginner-friendly full body workout to build foundational strength.",
+    "exercises": [
+      { "name": "Bodyweight Squats", "reps": "3x12", "instructions": "Keep chest up and sit back." },
+      { "name": "Push-ups", "reps": "3x10", "instructions": "Keep elbows close to body." }
+    ],
+    "image": "images/beginner-fullbody.jpg"
+  },
+  {
+    "id": 2,
+    "name": "HIIT Cardio Blast",
+    "type": "Cardio",
+    "duration": 20,
+    "difficulty": "Medium",
+    "description": "High intensity interval training to get your heart rate up.",
+    "exercises": [
+      { "name": "Jumping Jacks", "reps": "5x30 seconds", "instructions": "Jump with arms overhead." },
+      { "name": "Burpees", "reps": "4x15", "instructions": "Full body exercise with jump and push-up." }
+    ],
+    "image": "images/hiit-cardio.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Yoga Flow",
+    "type": "Flexibility",
+    "duration": 45,
+    "difficulty": "Easy",
+    "description": "Gentle yoga sequence to increase flexibility and reduce stress.",
+    "exercises": [
+      { "name": "Downward Dog", "reps": "Hold 1 min", "instructions": "Keep spine long." },
+      { "name": "Child's Pose", "reps": "Hold 2 min", "instructions": "Relax and breathe deeply." }
+    ],
+    "image": "images/yoga-flow.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Upper Body Strength",
+    "type": "Strength",
+    "duration": 40,
+    "difficulty": "Hard",
+    "description": "Build muscle in arms, chest, and back with weights or resistance bands.",
+    "exercises": [
+      { "name": "Dumbbell Rows", "reps": "4x12", "instructions": "Keep back straight." },
+      { "name": "Overhead Press", "reps": "4x10", "instructions": "Press weights overhead." }
+    ],
+    "image": "images/upper-body.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Core Strength",
+    "type": "Strength",
+    "duration": 25,
+    "difficulty": "Medium",
+    "description": "Strengthen your abs and lower back muscles.",
+    "exercises": [
+      { "name": "Plank", "reps": "3x45 seconds", "instructions": "Keep body straight." },
+      { "name": "Russian Twists", "reps": "3x20", "instructions": "Twist with controlled motion." }
+    ],
+    "image": "images/core-strength.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Leg Day Blast",
+    "type": "Strength",
+    "duration": 50,
+    "difficulty": "Hard",
+    "description": "Focused workout for quads, hamstrings, and calves.",
+    "exercises": [
+      { "name": "Lunges", "reps": "4x15 each leg", "instructions": "Keep knee over ankle." },
+      { "name": "Calf Raises", "reps": "4x20", "instructions": "Lift heels fully." }
+    ],
+    "image": "images/leg-day.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Beginner Pilates",
+    "type": "Flexibility",
+    "duration": 30,
+    "difficulty": "Easy",
+    "description": "Introduction to Pilates focusing on core and posture.",
+    "exercises": [
+      { "name": "The Hundred", "reps": "1x100 pumps", "instructions": "Maintain breathing rhythm." },
+      { "name": "Roll Up", "reps": "3x10", "instructions": "Slow controlled movement." }
+    ],
+    "image": "images/pilates-beginner.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Endurance Run",
+    "type": "Cardio",
+    "duration": 60,
+    "difficulty": "Hard",
+    "description": "Long steady state run to build aerobic endurance.",
+    "exercises": [
+      { "name": "Running", "reps": "60 minutes", "instructions": "Maintain steady pace." }
+    ],
+    "image": "images/endurance-run.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Stretch & Relax",
+    "type": "Flexibility",
+    "duration": 20,
+    "difficulty": "Easy",
+    "description": "Full body stretching routine to relax muscles.",
+    "exercises": [
+      { "name": "Hamstring Stretch", "reps": "Hold 1 min", "instructions": "Keep back straight." },
+      { "name": "Quad Stretch", "reps": "Hold 1 min", "instructions": "Pull ankle gently." }
+    ],
+    "image": "images/stretch-relax.jpg"
+  },
+  {
+    "id": 10,
+    "name": "CrossFit Circuit",
+    "type": "Strength",
+    "duration": 30,
+    "difficulty": "Hard",
+    "description": "High intensity circuit combining strength and cardio moves.",
+    "exercises": [
+      { "name": "Kettlebell Swings", "reps": "5x20", "instructions": "Use hips to power the swing." },
+      { "name": "Box Jumps", "reps": "5x15", "instructions": "Land softly with bent knees." }
+    ],
+    "image": "images/crossfit-circuit.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Swimming Laps",
+    "type": "Cardio",
+    "duration": 45,
+    "difficulty": "Medium",
+    "description": "Lap swimming to improve cardiovascular fitness.",
+    "exercises": [
+      { "name": "Freestyle", "reps": "10 laps", "instructions": "Keep head down and kick steady." }
+    ],
+    "image": "images/swimming-laps.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Meditation & Breathing",
+    "type": "Flexibility",
+    "duration": 15,
+    "difficulty": "Easy",
+    "description": "Relaxation and mindfulness through guided meditation.",
+    "exercises": [
+      { "name": "Breathing Exercise", "reps": "5 minutes", "instructions": "Focus on deep breaths." }
+    ],
+    "image": "images/meditation.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Powerlifting Basics",
+    "type": "Strength",
+    "duration": 60,
+    "difficulty": "Hard",
+    "description": "Fundamental powerlifting exercises for strength gains.",
+    "exercises": [
+      { "name": "Squat", "reps": "5x5", "instructions": "Go to parallel depth." },
+      { "name": "Deadlift", "reps": "5x5", "instructions": "Keep back flat and bar close." }
+    ],
+    "image": "images/powerlifting.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Bodyweight HIIT",
+    "type": "Cardio",
+    "duration": 25,
+    "difficulty": "Medium",
+    "description": "High intensity interval training using only bodyweight.",
+    "exercises": [
+      { "name": "Mountain Climbers", "reps": "4x30 seconds", "instructions": "Keep core tight." },
+      { "name": "Jump Squats", "reps": "4x15", "instructions": "Explode upward with jump." }
+    ],
+    "image": "images/bodyweight-hiit.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Cycling Endurance",
+    "type": "Cardio",
+    "duration": 50,
+    "difficulty": "Medium",
+    "description": "Long distance cycling to boost stamina.",
+    "exercises": [
+      { "name": "Outdoor Cycling", "reps": "50 minutes", "instructions": "Maintain steady cadence." }
+    ],
+    "image": "images/cycling-endurance.jpg"
+  }
+]

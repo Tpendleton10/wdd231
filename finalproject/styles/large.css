@@ -1,0 +1,88 @@
+/* large.css */
+
+/* Navigation horizontal layout */
+nav {
+  background-color: #0077b6;
+}
+
+.nav-list {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.nav-list li {
+  border: none;
+  margin: 0 1rem;
+}
+
+.nav-list li a {
+  color: white;
+  padding: 1rem 0;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.nav-list li a:hover,
+.nav-list li a[aria-current="page"] {
+  border-bottom: 3px solid #023047;
+}
+
+/* Hide hamburger on large screens */
+#hamburger {
+  display: none;
+}
+
+/* Workout cards grid */
+#workouts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.workout-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.workout-card:hover,
+.workout-card:focus-within {
+  transform: translateY(-4px);
+  outline: 3px solid #023047;
+  outline-offset: 2px;
+}
+
+/* Modal max width for large */
+#modal .modal-content {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+/* Form wider inputs */
+form input,
+form textarea,
+form select,
+form button {
+  max-width: 400px;
+}
+
+/* Center main content */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Footer center and spacing */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: #023047;
+}

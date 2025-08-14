@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Log Workout - FitPulse</title>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/small.css" media="screen and (max-width: 600px)" />
+  <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 601px)" />
+  <meta name="description" content="Log your workouts to track progress on FitPulse." />
+  <meta name="author" content="Your Name" />
+  <link rel="icon" href="images/gym.png" type="image/x-icon" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workouts.html">Workouts</a></li>
+        <li><a href="progress.html">Progress</a></li>
+        <li><a href="form.html" aria-current="page">Log Workout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Log Your Workout</h1>
+    <form id="workout-log-form" action="form-action.html" method="GET" novalidate>
+      <label for="date">Date of Workout:</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="workout-name">Workout Name:</label>
+      <input type="text" id="workout-name" name="workout-name" required />
+
+      <label for="duration">Duration (minutes):</label>
+      <input type="number" id="duration" name="duration" min="1" required />
+
+      <label for="notes">Notes:</label>
+      <textarea id="notes" name="notes" rows="4"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Ty Pendleton</p>
+    <p><a href="attributions.html">Attributions</a></p>
+  </footer>
+
+  <script>
+    // If form accessed from workout details modal, prefill workout name
+    const urlParams = new URLSearchParams(window.location.search);
+    const workoutId = urlParams.get('workoutId');
+
+    if (workoutId) {
+      fetch('./data/workouts.json')
+        .then(response => response.json())
+        .then(data => {
+          const workout = data.find(w => w.id === parseInt(workoutId));
+          if (workout) {
+            document.getElementById('workout-name').value = workout.name;
+          }
+        });
+    }
+  </script>
+</body>
+</html>
