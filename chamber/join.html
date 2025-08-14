@@ -21,7 +21,7 @@
 <body>
   <header>
     <div class="site-branding">Las Vegas Chamber of Commerce</div>
-    <nav role="navigation" aria-label="Main navigation">
+    <nav aria-label="Main navigation">
       <button id="menuToggle" aria-expanded="false" aria-controls="navList" aria-label="Toggle navigation menu">
         ☰ Menu
       </button>
@@ -75,9 +75,9 @@
                    autocomplete="organization-title"
                    pattern="[A-Za-z\s\-]{7,}"
                    aria-describedby="title-help title-error">
-            <div id="title-help" class="help-text">Minimum 7 characters. Letters, spaces, and hyphens only.</div>
             <span id="title-error" class="error-message" aria-live="polite"></span>
           </label>
+          <div id="title-help" class="help-text">Minimum 7 characters. Letters, spaces, and hyphens only.</div>
 
           <label for="email">
             Email Address *
@@ -220,7 +220,7 @@
     </div>
   </main>
 
-  <footer role="contentinfo">
+  <footer>
     <address>
       Contact: <a href="mailto:info@lvchamber.org">info@lvchamber.org</a> | 
       <a href="tel:+17025551234">(702) 555-1234</a>
