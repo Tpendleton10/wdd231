@@ -7,16 +7,83 @@
   <meta name="description" content="Attributions for images and data used in FitPulse." />
   <meta name="author" content="Ty Pendleton" />
   <link rel="icon" href="images/gym.png" type="image/x-icon" />
-  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/small.css" media="screen and (max-width: 600px)" />
+  <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 601px)" />
 </head>
 <body>
+  <header>
+    <h1>FitPulse</h1>
+    <nav aria-label="Primary navigation">
+      <button id="hamburger" aria-expanded="false" aria-controls="primary-navigation" aria-label="Menu">
+        &#9776;
+      </button>
+      <ul id="primary-navigation" class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workouts.html">Workouts</a></li>
+        <li><a href="progress.html">Progress</a></li>
+        <li><a href="form.html">Log Workout</a></li>
+        <li><a href="attributions.html" aria-current="page">Attributions</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <main class="container">
-    <h1>Attributions</h1>
-    <ul>
-      <li>Workout images: [provider or Unsplash links] — describe and link here.</li>
-      <li>Icons: [provider]</li>
-      <li>APIs/data: local JSON authored by Ty Pendleton.</li>
-    </ul>
+    <h2>Attributions</h2>
+    <section>
+      <h3>Images</h3>
+      <ul>
+        <li><strong>Hero Image:</strong> Sports collage from <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> — Various sport activities in vibrant colors</li>
+        <li><strong>Workout Images:</strong> Exercise photos from <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> and <a href="https://pexels.com" target="_blank" rel="noopener">Pexels</a></li>
+        <li><strong>Gym Icon:</strong> Fitness icon for favicon from <a href="https://iconify.design" target="_blank" rel="noopener">Iconify</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Data Sources</h3>
+      <ul>
+        <li><strong>Workout Data:</strong> Local JSON file authored by Ty Pendleton based on fitness expertise and research</li>
+        <li><strong>Exercise Information:</strong> Compiled from various fitness resources and personal training knowledge</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Technologies Used</h3>
+      <ul>
+        <li><strong>HTML5:</strong> Semantic markup and accessibility features</li>
+        <li><strong>CSS3:</strong> Custom responsive design with CSS Grid and Flexbox</li>
+        <li><strong>JavaScript ES6+:</strong> Modern JavaScript with modules, async/await, and DOM manipulation</li>
+        <li><strong>Local Storage API:</strong> Client-side data persistence</li>
+        <li><strong>Fetch API:</strong> Asynchronous data loading</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Fonts</h3>
+      <ul>
+        <li><strong>Headings:</strong> Montserrat font family (fallback: sans-serif)</li>
+        <li><strong>Body Text:</strong> Open Sans font family (fallback: Arial, sans-serif)</li>
+      </ul>
+    </section>
   </main>
+
+  <footer>
+    <p>&copy; 2025 Ty Pendleton</p>
+    <p>
+      <a href="attributions.html">Attributions</a> | 
+      <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank" rel="noopener">Project Demo Video</a>
+    </p>
+  </footer>
+
+  <script>
+    // Hamburger menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.querySelector('.nav-list');
+    hamburger?.addEventListener('click', () => {
+      navList.classList.toggle('active');
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!expanded));
+    });
+  </script>
 </body>
 </html>

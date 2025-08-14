@@ -8,23 +8,28 @@
   <link rel="stylesheet" href="styles/small.css" media="screen and (max-width: 600px)" />
   <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 601px)" />
   <meta name="description" content="Log your workouts to track progress on FitPulse." />
-  <meta name="author" content="Your Name" />
+  <meta name="author" content="Ty Pendleton" />
   <link rel="icon" href="images/gym.png" type="image/x-icon" />
 </head>
 <body>
   <header>
-    <nav>
-      <ul class="nav-list">
+    <h1>FitPulse</h1>
+    <nav aria-label="Primary navigation">
+      <button id="hamburger" aria-expanded="false" aria-controls="primary-navigation" aria-label="Menu">
+        &#9776;
+      </button>
+      <ul id="primary-navigation" class="nav-list">
         <li><a href="index.html">Home</a></li>
         <li><a href="workouts.html">Workouts</a></li>
         <li><a href="progress.html">Progress</a></li>
         <li><a href="form.html" aria-current="page">Log Workout</a></li>
+        <li><a href="attributions.html">Attributions</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h1>Log Your Workout</h1>
+    <h2>Log Your Workout</h2>
     <form id="workout-log-form" action="form-action.html" method="GET" novalidate>
       <label for="date">Date of Workout:</label>
       <input type="date" id="date" name="date" required />
@@ -44,7 +49,10 @@
 
   <footer>
     <p>&copy; 2025 Ty Pendleton</p>
-    <p><a href="attributions.html">Attributions</a></p>
+    <p>
+      <a href="attributions.html">Attributions</a> | 
+      <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank" rel="noopener">Project Demo Video</a>
+    </p>
   </footer>
 
   <script>
@@ -62,6 +70,18 @@
           }
         });
     }
+
+    // Set today's date as default
+    document.getElementById('date').valueAsDate = new Date();
+
+    // Hamburger menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.querySelector('.nav-list');
+    hamburger?.addEventListener('click', () => {
+      navList.classList.toggle('active');
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!expanded));
+    });
   </script>
 </body>
 </html>

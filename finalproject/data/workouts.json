@@ -4,11 +4,15 @@
     "name": "Beginner Full Body",
     "type": "Strength",
     "duration": 30,
-    "difficulty": "Easy",
-    "description": "A beginner-friendly full body workout to build foundational strength.",
+    "difficulty": "Beginner",
+    "equipment": "None",
+    "description": "A beginner-friendly full body workout to build foundational strength and introduce proper movement patterns.",
     "exercises": [
-      { "name": "Bodyweight Squats", "reps": "3x12", "instructions": "Keep chest up and sit back." },
-      { "name": "Push-ups", "reps": "3x10", "instructions": "Keep elbows close to body." }
+      "Bodyweight Squats - 3 sets of 12 reps",
+      "Push-ups (knee modified if needed) - 3 sets of 10 reps",
+      "Glute Bridges - 3 sets of 15 reps",
+      "Modified Plank - 3 sets of 30 seconds",
+      "Wall Sits - 3 sets of 20 seconds"
     ],
     "image": "images/beginner-fullbody.jpg"
   },
@@ -17,11 +21,15 @@
     "name": "HIIT Cardio Blast",
     "type": "Cardio",
     "duration": 20,
-    "difficulty": "Medium",
-    "description": "High intensity interval training to get your heart rate up.",
+    "difficulty": "Intermediate",
+    "equipment": "None",
+    "description": "High intensity interval training to get your heart rate up and burn calories efficiently in a short time.",
     "exercises": [
-      { "name": "Jumping Jacks", "reps": "5x30 seconds", "instructions": "Jump with arms overhead." },
-      { "name": "Burpees", "reps": "4x15", "instructions": "Full body exercise with jump and push-up." }
+      "Jumping Jacks - 5 rounds of 30 seconds",
+      "Burpees - 4 sets of 15 reps",
+      "High Knees - 4 rounds of 30 seconds",
+      "Mountain Climbers - 4 rounds of 30 seconds",
+      "Rest periods - 30 seconds between exercises"
     ],
     "image": "images/hiit-cardio.jpg"
   },
@@ -30,11 +38,16 @@
     "name": "Yoga Flow",
     "type": "Flexibility",
     "duration": 45,
-    "difficulty": "Easy",
-    "description": "Gentle yoga sequence to increase flexibility and reduce stress.",
+    "difficulty": "Beginner",
+    "equipment": "Yoga Mat",
+    "description": "Gentle yoga sequence to increase flexibility, reduce stress, and improve mind-body connection.",
     "exercises": [
-      { "name": "Downward Dog", "reps": "Hold 1 min", "instructions": "Keep spine long." },
-      { "name": "Child's Pose", "reps": "Hold 2 min", "instructions": "Relax and breathe deeply." }
+      "Downward Dog - Hold for 1 minute",
+      "Child's Pose - Hold for 2 minutes",
+      "Cat-Cow Stretch - 10 slow movements",
+      "Warrior I - 30 seconds each side",
+      "Seated Forward Fold - Hold for 1 minute",
+      "Corpse Pose - 5 minutes relaxation"
     ],
     "image": "images/yoga-flow.jpg"
   },
@@ -43,11 +56,16 @@
     "name": "Upper Body Strength",
     "type": "Strength",
     "duration": 40,
-    "difficulty": "Hard",
-    "description": "Build muscle in arms, chest, and back with weights or resistance bands.",
+    "difficulty": "Advanced",
+    "equipment": "Dumbbells, Resistance Bands",
+    "description": "Build muscle in arms, chest, and back with weights and resistance training for maximum strength gains.",
     "exercises": [
-      { "name": "Dumbbell Rows", "reps": "4x12", "instructions": "Keep back straight." },
-      { "name": "Overhead Press", "reps": "4x10", "instructions": "Press weights overhead." }
+      "Dumbbell Rows - 4 sets of 12 reps",
+      "Overhead Press - 4 sets of 10 reps",
+      "Chest Press - 4 sets of 12 reps",
+      "Bicep Curls - 3 sets of 15 reps",
+      "Tricep Extensions - 3 sets of 12 reps",
+      "Lateral Raises - 3 sets of 15 reps"
     ],
     "image": "images/upper-body.jpg"
   },
@@ -56,11 +74,15 @@
     "name": "Core Strength",
     "type": "Strength",
     "duration": 25,
-    "difficulty": "Medium",
-    "description": "Strengthen your abs and lower back muscles.",
+    "difficulty": "Intermediate",
+    "equipment": "Exercise Mat",
+    "description": "Strengthen your abs, obliques, and lower back muscles for better posture and stability.",
     "exercises": [
-      { "name": "Plank", "reps": "3x45 seconds", "instructions": "Keep body straight." },
-      { "name": "Russian Twists", "reps": "3x20", "instructions": "Twist with controlled motion." }
+      "Plank - 3 sets of 45 seconds",
+      "Russian Twists - 3 sets of 20 reps",
+      "Bicycle Crunches - 3 sets of 20 each side",
+      "Dead Bug - 3 sets of 10 each side",
+      "Side Plank - 2 sets of 30 seconds each side"
     ],
     "image": "images/core-strength.jpg"
   },
@@ -69,11 +91,16 @@
     "name": "Leg Day Blast",
     "type": "Strength",
     "duration": 50,
-    "difficulty": "Hard",
-    "description": "Focused workout for quads, hamstrings, and calves.",
+    "difficulty": "Advanced",
+    "equipment": "Dumbbells, Barbell",
+    "description": "Focused workout for quads, hamstrings, glutes, and calves to build lower body power and strength.",
     "exercises": [
-      { "name": "Lunges", "reps": "4x15 each leg", "instructions": "Keep knee over ankle." },
-      { "name": "Calf Raises", "reps": "4x20", "instructions": "Lift heels fully." }
+      "Squats - 4 sets of 12 reps",
+      "Lunges - 4 sets of 15 each leg",
+      "Romanian Deadlifts - 4 sets of 12 reps",
+      "Calf Raises - 4 sets of 20 reps",
+      "Bulgarian Split Squats - 3 sets of 10 each leg",
+      "Glute Bridges - 3 sets of 15 reps"
     ],
     "image": "images/leg-day.jpg"
   },
@@ -82,11 +109,15 @@
     "name": "Beginner Pilates",
     "type": "Flexibility",
     "duration": 30,
-    "difficulty": "Easy",
-    "description": "Introduction to Pilates focusing on core and posture.",
+    "difficulty": "Beginner",
+    "equipment": "Pilates Mat",
+    "description": "Introduction to Pilates focusing on core strength, posture improvement, and controlled movements.",
     "exercises": [
-      { "name": "The Hundred", "reps": "1x100 pumps", "instructions": "Maintain breathing rhythm." },
-      { "name": "Roll Up", "reps": "3x10", "instructions": "Slow controlled movement." }
+      "The Hundred - 1 set of 100 pumps",
+      "Roll Up - 3 sets of 10 reps",
+      "Single Leg Circles - 5 each direction per leg",
+      "Rolling Like a Ball - 10 rolls",
+      "Spine Stretch Forward - 5 repetitions"
     ],
     "image": "images/pilates-beginner.jpg"
   },
@@ -95,10 +126,14 @@
     "name": "Endurance Run",
     "type": "Cardio",
     "duration": 60,
-    "difficulty": "Hard",
-    "description": "Long steady state run to build aerobic endurance.",
+    "difficulty": "Advanced",
+    "equipment": "Running Shoes",
+    "description": "Long steady state run to build aerobic endurance and cardiovascular fitness.",
     "exercises": [
-      { "name": "Running", "reps": "60 minutes", "instructions": "Maintain steady pace." }
+      "Warm-up Walk - 5 minutes",
+      "Steady State Running - 50 minutes",
+      "Cool-down Walk - 5 minutes",
+      "Dynamic Stretching - 10 minutes post-run"
     ],
     "image": "images/endurance-run.jpg"
   },
@@ -107,11 +142,16 @@
     "name": "Stretch & Relax",
     "type": "Flexibility",
     "duration": 20,
-    "difficulty": "Easy",
-    "description": "Full body stretching routine to relax muscles.",
+    "difficulty": "Beginner",
+    "equipment": "None",
+    "description": "Full body stretching routine to relax muscles, improve flexibility, and reduce tension.",
     "exercises": [
-      { "name": "Hamstring Stretch", "reps": "Hold 1 min", "instructions": "Keep back straight." },
-      { "name": "Quad Stretch", "reps": "Hold 1 min", "instructions": "Pull ankle gently." }
+      "Hamstring Stretch - Hold 1 minute each leg",
+      "Quad Stretch - Hold 1 minute each leg",
+      "Shoulder Rolls - 10 forward, 10 backward",
+      "Neck Stretches - 30 seconds each direction",
+      "Hip Flexor Stretch - 1 minute each side",
+      "Spinal Twist - 30 seconds each side"
     ],
     "image": "images/stretch-relax.jpg"
   },
@@ -120,11 +160,15 @@
     "name": "CrossFit Circuit",
     "type": "Strength",
     "duration": 30,
-    "difficulty": "Hard",
-    "description": "High intensity circuit combining strength and cardio moves.",
+    "difficulty": "Advanced",
+    "equipment": "Kettlebell, Box, Barbell",
+    "description": "High intensity circuit combining strength and cardio moves for functional fitness and conditioning.",
     "exercises": [
-      { "name": "Kettlebell Swings", "reps": "5x20", "instructions": "Use hips to power the swing." },
-      { "name": "Box Jumps", "reps": "5x15", "instructions": "Land softly with bent knees." }
+      "Kettlebell Swings - 5 sets of 20 reps",
+      "Box Jumps - 5 sets of 15 reps",
+      "Thrusters - 4 sets of 12 reps",
+      "Pull-ups - 4 sets of 8 reps",
+      "Burpee Box Jump-overs - 3 sets of 10 reps"
     ],
     "image": "images/crossfit-circuit.jpg"
   },
@@ -133,10 +177,15 @@
     "name": "Swimming Laps",
     "type": "Cardio",
     "duration": 45,
-    "difficulty": "Medium",
-    "description": "Lap swimming to improve cardiovascular fitness.",
+    "difficulty": "Intermediate",
+    "equipment": "Swimming Pool",
+    "description": "Lap swimming to improve cardiovascular fitness while being easy on joints with low-impact exercise.",
     "exercises": [
-      { "name": "Freestyle", "reps": "10 laps", "instructions": "Keep head down and kick steady." }
+      "Warm-up - Easy swim for 5 minutes",
+      "Freestyle Laps - 20 laps at moderate pace",
+      "Backstroke - 10 laps",
+      "Breaststroke - 10 laps",
+      "Cool-down - Easy swim for 5 minutes"
     ],
     "image": "images/swimming-laps.jpg"
   },
@@ -145,10 +194,14 @@
     "name": "Meditation & Breathing",
     "type": "Flexibility",
     "duration": 15,
-    "difficulty": "Easy",
-    "description": "Relaxation and mindfulness through guided meditation.",
+    "difficulty": "Beginner",
+    "equipment": "None",
+    "description": "Relaxation and mindfulness through guided meditation and breathing exercises for stress relief.",
     "exercises": [
-      { "name": "Breathing Exercise", "reps": "5 minutes", "instructions": "Focus on deep breaths." }
+      "Deep Breathing Exercise - 5 minutes",
+      "Body Scan Meditation - 5 minutes",
+      "Mindfulness Meditation - 3 minutes",
+      "Gratitude Practice - 2 minutes"
     ],
     "image": "images/meditation.jpg"
   },
@@ -157,11 +210,15 @@
     "name": "Powerlifting Basics",
     "type": "Strength",
     "duration": 60,
-    "difficulty": "Hard",
-    "description": "Fundamental powerlifting exercises for strength gains.",
+    "difficulty": "Advanced",
+    "equipment": "Barbell, Weight Plates, Squat Rack",
+    "description": "Fundamental powerlifting exercises focusing on the big three lifts for maximum strength development.",
     "exercises": [
-      { "name": "Squat", "reps": "5x5", "instructions": "Go to parallel depth." },
-      { "name": "Deadlift", "reps": "5x5", "instructions": "Keep back flat and bar close." }
+      "Back Squats - 5 sets of 5 reps",
+      "Bench Press - 5 sets of 5 reps",
+      "Deadlifts - 5 sets of 5 reps",
+      "Overhead Press - 3 sets of 8 reps",
+      "Barbell Rows - 3 sets of 8 reps"
     ],
     "image": "images/powerlifting.jpg"
   },
@@ -170,11 +227,15 @@
     "name": "Bodyweight HIIT",
     "type": "Cardio",
     "duration": 25,
-    "difficulty": "Medium",
-    "description": "High intensity interval training using only bodyweight.",
+    "difficulty": "Intermediate",
+    "equipment": "None",
+    "description": "High intensity interval training using only bodyweight movements for a equipment-free cardio blast.",
     "exercises": [
-      { "name": "Mountain Climbers", "reps": "4x30 seconds", "instructions": "Keep core tight." },
-      { "name": "Jump Squats", "reps": "4x15", "instructions": "Explode upward with jump." }
+      "Mountain Climbers - 4 rounds of 30 seconds",
+      "Jump Squats - 4 sets of 15 reps",
+      "Push-up to T - 4 sets of 10 reps",
+      "Plank Jacks - 4 rounds of 30 seconds",
+      "Tuck Jumps - 4 sets of 12 reps"
     ],
     "image": "images/bodyweight-hiit.jpg"
   },
@@ -183,11 +244,48 @@
     "name": "Cycling Endurance",
     "type": "Cardio",
     "duration": 50,
-    "difficulty": "Medium",
-    "description": "Long distance cycling to boost stamina.",
+    "difficulty": "Intermediate",
+    "equipment": "Bicycle, Helmet",
+    "description": "Long distance cycling to boost stamina, leg strength, and cardiovascular endurance.",
     "exercises": [
-      { "name": "Outdoor Cycling", "reps": "50 minutes", "instructions": "Maintain steady cadence." }
+      "Warm-up - Easy pace for 10 minutes",
+      "Steady State Cycling - 35 minutes moderate pace",
+      "Cool-down - Easy pace for 5 minutes",
+      "Post-ride stretching - Focus on legs and back"
     ],
     "image": "images/cycling-endurance.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Dance Cardio Party",
+    "type": "Cardio",
+    "duration": 35,
+    "difficulty": "Beginner",
+    "equipment": "None",
+    "description": "Fun, energetic dance workout that combines cardio with rhythm and movement for an enjoyable fitness experience.",
+    "exercises": [
+      "Warm-up Dance Moves - 5 minutes",
+      "High-energy Choreography - 20 minutes",
+      "Freestyle Dancing - 5 minutes",
+      "Cool-down with Slow Dancing - 5 minutes"
+    ],
+    "image": "images/dance-cardio.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Functional Movement",
+    "type": "Strength",
+    "duration": 35,
+    "difficulty": "Intermediate",
+    "equipment": "Resistance Bands, Medicine Ball",
+    "description": "Workout focusing on movements that translate to daily activities and improve overall functional strength.",
+    "exercises": [
+      "Farmer's Walk - 3 sets of 30 seconds",
+      "Turkish Get-ups - 3 sets of 5 each side",
+      "Medicine Ball Slams - 4 sets of 15 reps",
+      "Single Leg RDL - 3 sets of 10 each leg",
+      "Bear Crawl - 3 sets of 30 seconds"
+    ],
+    "image": "images/functional-movement.jpg"
   }
 ]

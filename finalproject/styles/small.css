@@ -1,44 +1,46 @@
-/* small.css */
+/* small.css - Mobile styles (max-width: 600px) */
 
-/* Reset some spacing */
+/* Body adjustments for mobile */
 body {
-  margin: 1rem;
-}
-
-/* Navigation */
-nav {
-  position: relative;
-  background-color: #0077b6;
-}
-
-.nav-list {
-  list-style: none;
   padding: 0;
-  margin: 0;
-  display: none; /* Hidden initially */
-  flex-direction: column;
 }
 
-.nav-list li {
-  border-bottom: 1px solid #005f73;
-}
-
-.nav-list li a {
-  color: white;
-  text-decoration: none;
-  display: block;
+/* Header mobile layout */
+header {
   padding: 1rem;
 }
 
-/* Hamburger button */
+header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile navigation */
+nav {
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+/* Show hamburger on mobile */
 #hamburger {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  padding: 1rem;
-  cursor: pointer;
   display: block;
+  float: right;
+  margin-top: -3rem;
+}
+
+/* Hide navigation by default on mobile */
+.nav-list {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  background-color: var(--secondary-blue);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border-radius: 0 0 8px 8px;
+  box-shadow: var(--shadow-medium);
 }
 
 /* Show nav when active */
@@ -46,69 +48,242 @@ nav {
   display: flex;
 }
 
-/* Workout cards stack */
-#workouts-container {
-  display: flex;
-  flex-direction: column;
+.nav-list li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-list li:last-child {
+  border-bottom: none;
+}
+
+.nav-list li a {
+  display: block;
+  padding: 1rem;
+  border-radius: 0;
+}
+
+.nav-list li a:hover,
+.nav-list li a:focus,
+.nav-list li a[aria-current="page"] {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Main content mobile */
+main {
+  padding: 1rem;
+}
+
+/* Hero section mobile */
+#hero {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+
+#hero h2 {
+  font-size: 1.8rem;
+}
+
+#hero p {
+  font-size: 1rem;
+}
+
+/* Workout cards mobile - stack vertically */
+#workouts-container,
+#workouts-list {
+  grid-template-columns: 1fr;
   gap: 1rem;
+  padding: 0.5rem 0;
 }
 
 .workout-card {
-  background-color: white;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  outline-offset: 2px;
+  margin-bottom: 1rem;
 }
 
-.workout-card:focus-within {
-  outline: 3px solid #023047;
+.workout-card img {
+  height: 180px;
 }
 
-/* Modal content */
-#modal .modal-content {
+/* Modal mobile adjustments */
+#modal {
   padding: 1rem;
 }
 
-/* Form styling */
+.modal-content {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  width: calc(100% - 2rem);
+  max-height: 85vh;
+}
+
+#modal-close {
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 35px;
+  height: 35px;
+  font-size: 1.5rem;
+}
+
+.modal-content img {
+  max-width: 100%;
+}
+
+/* Form mobile styling */
+form {
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
 form label {
-  display: block;
   margin-top: 1rem;
-  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 form input,
 form textarea,
-form select,
+form select {
+  padding: 0.75rem;
+  font-size: 16px; /* Prevents zoom on iOS */
+}
+
 form button {
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.25rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 1rem;
   font-size: 1rem;
 }
 
-form button {
-  background-color: #0077b6;
-  color: white;
-  border: none;
-  margin-top: 1.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+/* Filter form mobile */
+#filter-form {
+  padding: 1rem;
+  flex-direction: column;
+  align-items: stretch;
 }
 
-form button:hover,
-form button:focus {
-  background-color: #005f73;
-  outline: none;
+#filter-form select {
+  min-width: auto;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
-/* Focus states */
-a:focus,
-button:focus,
-input:focus,
-textarea:focus {
-  outline: 3px solid #023047;
+#filter-form button {
+  width: 100%;
+}
+
+/* Progress page mobile */
+.logged-workout {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.logged-workout h3 {
+  font-size: 1.2rem;
+}
+
+/* Success message mobile */
+.success-message {
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.success-message h3 {
+  font-size: 1.3rem;
+}
+
+.action-links .button {
+  display: block;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+/* Footer mobile */
+footer {
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Typography adjustments for mobile */
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+/* Button adjustments for mobile */
+button, .button {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  min-height: 44px; /* Touch target size */
+}
+
+/* Ensure touch targets are large enough */
+a, button, input, select, textarea {
+  min-height: 44px;
+}
+
+/* Improve touch targets for workout cards */
+.workout-card {
+  min-height: 300px;
+}
+
+.workout-card .details-btn {
+  min-height: 44px;
+  font-size: 0.9rem;
+}
+
+/* Accessibility improvements for mobile */
+:focus-visible {
+  outline: 3px solid var(--primary-blue);
   outline-offset: 2px;
+}
+
+/* Handle landscape orientation on small devices */
+@media screen and (max-width: 600px) and (orientation: landscape) {
+  #hero {
+    padding: 1.5rem 1rem;
+  }
+  
+  #hero h2 {
+    font-size: 1.5rem;
+  }
+  
+  .modal-content {
+    max-height: 90vh;
+    margin: 1rem auto;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 375px) */
+@media screen and (max-width: 374px) {
+  header {
+    padding: 0.75rem;
+  }
+  
+  header h1 {
+    font-size: 1.3rem;
+  }
+  
+  main {
+    padding: 0.75rem;
+  }
+  
+  #hero {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .workout-card {
+    margin-bottom: 0.75rem;
+  }
+  
+  form {
+    padding: 1rem;
+  }
+  
+  .modal-content {
+    padding: 1rem;
+  }
 }

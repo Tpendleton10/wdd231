@@ -1,116 +1,226 @@
-// main.js (ES Module)
+// main.js (ES Module) - Complete Updated Version
 const workoutsUrl = './data/workouts.json';
 
 // Elements
 const workoutsContainer = document.getElementById('workouts-container');
-const filterSelect = document.getElementById('filter-type');
+const workoutsListContainer = document.getElementById('workouts-list');
+const progressContainer = document.getElementById('progress-list');
+const filterForm = document.getElementById('filter-form');
+const typeFilterSelect = document.getElementById('type-filter');
 const modal = document.getElementById('modal');
-const modalContent = modal.querySelector('.modal-content');
-const closeModalBtn = modal.querySelector('.close-btn');
+const modalClose = document.getElementById('modal-close');
 
 let workoutsData = [];
 
-// Fetch workouts data asynchronously
+// Fetch workouts data asynchronously with proper error handling
 async function fetchWorkouts() {
   try {
     const response = await fetch(workoutsUrl);
-    if (!response.ok) throw new Error('Network response was not OK');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     const data = await response.json();
     workoutsData = data;
-    displayWorkouts(data);
+    
+    // Display workouts on different pages
+    if (workoutsContainer) {
+      displayWorkouts(data.slice(0, 6)); // Show first 6 on home page
+    }
+    if (workoutsListContainer) {
+      displayWorkouts(data); // Show all on workouts page
+    }
   } catch (error) {
-    workoutsContainer.innerHTML = `<p>Error loading workouts: ${error.message}</p>`;
+    console.error('Error fetching workouts:', error);
+    const container = workoutsContainer || workoutsListContainer;
+    if (container) {
+      container.innerHTML = `<p>Error loading workouts: ${error.message}</p>`;
+    }
   }
 }
 
-// Generate workout cards
+// Generate workout cards using template literals and array methods
 function displayWorkouts(workouts) {
+  const container = workoutsContainer || workoutsListContainer;
+  if (!container) return;
+  
   if (!workouts.length) {
-    workoutsContainer.innerHTML = '<p>No workouts found.</p>';
+    container.innerHTML = '<p>No workouts found.</p>';
     return;
   }
   
-  workoutsContainer.innerHTML = workouts.map(workout => `
+  // Using map array method for data processing
+  container.innerHTML = workouts.map(workout => `
     <article class="workout-card" tabindex="0" data-id="${workout.id}">
+      <img src="${workout.image}" alt="${workout.name} workout" loading="lazy" />
       <h3>${workout.name}</h3>
       <p><strong>Type:</strong> ${workout.type}</p>
-      <p><strong>Duration:</strong> ${workout.duration}</p>
+      <p><strong>Duration:</strong> ${workout.duration} minutes</p>
       <p><strong>Difficulty:</strong> ${workout.difficulty}</p>
-      <button class="details-btn" aria-label="View details for ${workout.name}">Details</button>
+      <p><strong>Equipment:</strong> ${workout.equipment}</p>
+      <button class="details-btn" data-id="${workout.id}" aria-label="View details for ${workout.name}">
+        View Details
+      </button>
     </article>
   `).join('');
+  
   attachCardEventListeners();
 }
 
-// Filter workouts by type
-function filterWorkouts() {
-  const selectedType = filterSelect.value;
-  if (selectedType === 'all') {
-    displayWorkouts(workoutsData);
-  } else {
-    const filtered = workoutsData.filter(w => w.type === selectedType);
-    displayWorkouts(filtered);
+// Filter workouts by type using array filter method
+function filterWorkouts(event) {
+  event.preventDefault();
+  const selectedType = typeFilterSelect.value;
+  
+  // Using filter array method
+  const filtered = selectedType === 'all' 
+    ? workoutsData 
+    : workoutsData.filter(workout => workout.type.toLowerCase() === selectedType.toLowerCase());
+    
+  displayWorkouts(filtered);
+}
+
+// Show modal with workout details - DOM manipulation
+function showModal(workoutId) {
+  const workout = workoutsData.find(w => w.id === parseInt(workoutId));
+  if (!workout || !modal) return;
+
+  // DOM manipulation - modifying content and properties
+  const modalTitle = document.getElementById('modal-title');
+  const modalDesc = document.getElementById('modal-desc');
+  
+  modalTitle.textContent = workout.name;
+  
+  // Using template literals for dynamic content
+  modalDesc.innerHTML = `
+    <img src="${workout.image}" alt="${workout.name}" style="width: 100%; max-width: 300px; border-radius: 8px; margin-bottom: 1rem;" />
+    <p><strong>Type:</strong> ${workout.type}</p>
+    <p><strong>Duration:</strong> ${workout.duration} minutes</p>
+    <p><strong>Difficulty:</strong> ${workout.difficulty}</p>
+    <p><strong>Equipment:</strong> ${workout.equipment}</p>
+    <p><strong>Description:</strong> ${workout.description}</p>
+    <h4>Exercises:</h4>
+    <ul>
+      ${workout.exercises.map(exercise => `<li>${exercise}</li>`).join('')}
+    </ul>
+    <button id="log-workout-btn" class="button">Log This Workout</button>
+  `;
+
+  // Show modal - DOM manipulation
+  modal.removeAttribute('hidden');
+  modal.style.display = 'block';
+  modal.setAttribute('aria-hidden', 'false');
+  modalTitle.focus();
+
+  // Add event listener for log workout button
+  const logBtn = document.getElementById('log-workout-btn');
+  if (logBtn) {
+    logBtn.addEventListener('click', () => {
+      closeModal();
+      window.location.href = `form.html?workoutId=${workout.id}`;
+    });
   }
 }
 
-// Show modal with workout details
-function showModal(workoutId) {
-  const workout = workoutsData.find(w => w.id === parseInt(workoutId));
-  if (!workout) return;
-
-  modalContent.innerHTML = `
-    <button class="close-btn" aria-label="Close modal">&times;</button>
-    <h2 id="modal-title">${workout.name}</h2>
-    <p><strong>Type:</strong> ${workout.type}</p>
-    <p><strong>Duration:</strong> ${workout.duration}</p>
-    <p><strong>Difficulty:</strong> ${workout.difficulty}</p>
-    <p>${workout.description}</p>
-    <h3>Exercises</h3>
-    <ul>
-      ${workout.exercises.map(ex => `<li>${ex}</li>`).join('')}
-    </ul>
-    <button id="log-workout-btn">Log Workout</button>
-  `;
-
-  // Show modal
-  modal.style.display = 'block';
-  modal.setAttribute('aria-hidden', 'false');
-  modalContent.focus();
-
-  // Close button listener
-  modalContent.querySelector('.close-btn').addEventListener('click', closeModal);
-  document.getElementById('log-workout-btn').addEventListener('click', () => {
-    closeModal();
-    window.location.href = 'form.html?workoutId=' + workout.id;
-  });
-}
-
+// Close modal function
 function closeModal() {
+  if (!modal) return;
+  modal.setAttribute('hidden', '');
   modal.style.display = 'none';
   modal.setAttribute('aria-hidden', 'true');
 }
 
-// Attach event listeners to workout cards' detail buttons
+// Attach event listeners to workout cards
 function attachCardEventListeners() {
   const detailButtons = document.querySelectorAll('.details-btn');
+  const workoutCards = document.querySelectorAll('.workout-card');
+  
+  // Event handling for buttons
   detailButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      const card = e.target.closest('.workout-card');
+      e.stopPropagation();
+      showModal(btn.dataset.id);
+    });
+  });
+  
+  // Event handling for card clicks
+  workoutCards.forEach(card => {
+    card.addEventListener('click', () => {
       showModal(card.dataset.id);
+    });
+    
+    // Keyboard accessibility
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        showModal(card.dataset.id);
+      }
     });
   });
 }
 
-// Close modal on outside click or Escape key
-window.addEventListener('click', (e) => {
-  if (e.target === modal) closeModal();
-});
-window.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
-});
+// Load and display progress from local storage
+function loadProgress() {
+  if (!progressContainer) return;
+  
+  const loggedWorkouts = JSON.parse(localStorage.getItem('loggedWorkouts')) || [];
+  
+  if (loggedWorkouts.length === 0) {
+    progressContainer.innerHTML = '<p>No workouts logged yet. <a href="form.html">Log your first workout!</a></p>';
+    return;
+  }
+  
+  // Using map to process and display data
+  progressContainer.innerHTML = loggedWorkouts.map(log => `
+    <article class="logged-workout">
+      <h3>${log.name}</h3>
+      <p><strong>Date:</strong> ${new Date(log.date).toLocaleDateString()}</p>
+      <p><strong>Duration:</strong> ${log.duration} minutes</p>
+      <p><strong>Notes:</strong> ${log.notes || 'No notes added'}</p>
+    </article>
+  `).join('');
+}
 
-// Filter event listener
-if (filterSelect) filterSelect.addEventListener('change', filterWorkouts);
-
-// Initial fetch
-if (workoutsContainer) fetchWorkouts();
+// Event Listeners
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize data fetching
+  fetchWorkouts();
+  
+  // Load progress if on progress page
+  loadProgress();
+  
+  // Filter form event listener
+  if (filterForm) {
+    filterForm.addEventListener('submit', filterWorkouts);
+  }
+  
+  // Modal close event listeners
+  if (modalClose) {
+    modalClose.addEventListener('click', closeModal);
+  }
+  
+  // Close modal on outside click
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
+  
+  // Close modal on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && modal.style.display === 'block') {
+      closeModal();
+    }
+  });
+  
+  // Hamburger menu functionality
+  const hamburger = document.getElementById('hamburger');
+  const navList = document.querySelector('.nav-list');
+  
+  if (hamburger && navList) {
+    hamburger.addEventListener('click', () => {
+      navList.classList.toggle('active');
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!expanded));
+    });
+  }
+});

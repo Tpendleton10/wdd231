@@ -8,32 +8,39 @@
   <link rel="stylesheet" href="styles/small.css" media="screen and (max-width: 600px)" />
   <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 601px)" />
   <meta name="description" content="Your workout log submission confirmation." />
-  <meta name="author" content="Your Name" />
+  <meta name="author" content="Ty Pendleton" />
   <link rel="icon" href="images/gym.png" type="image/x-icon" />
 </head>
 <body>
   <header>
-    <nav>
-      <ul class="nav-list">
+    <h1>FitPulse</h1>
+    <nav aria-label="Primary navigation">
+      <button id="hamburger" aria-expanded="false" aria-controls="primary-navigation" aria-label="Menu">
+        &#9776;
+      </button>
+      <ul id="primary-navigation" class="nav-list">
         <li><a href="index.html">Home</a></li>
         <li><a href="workouts.html">Workouts</a></li>
         <li><a href="progress.html">Progress</a></li>
         <li><a href="form.html">Log Workout</a></li>
+        <li><a href="attributions.html">Attributions</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h1>Workout Log Submitted</h1>
+    <h2>Workout Log Submitted</h2>
     <section id="submitted-data">
       <!-- Submitted form data will be shown here -->
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Your Name</p>
-    <p><a href="attributions.html">Attributions</a></p>
-    <p><a href="https://youtu.be/your-video-link" target="_blank" rel="noopener">Project Demo Video</a></p>
+    <p>&copy; 2025 Ty Pendleton</p>
+    <p>
+      <a href="attributions.html">Attributions</a> | 
+      <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank" rel="noopener">Project Demo Video</a>
+    </p>
   </footer>
 
   <script>
@@ -42,23 +49,44 @@
       const date = params.get('date') || 'N/A';
       const workoutName = params.get('workout-name') || 'N/A';
       const duration = params.get('duration') || 'N/A';
-      const notes = params.get('notes') || 'N/A';
+      const notes = params.get('notes') || 'No notes added';
 
       // Save to localStorage for progress tracking
       let loggedWorkouts = JSON.parse(localStorage.getItem('loggedWorkouts')) || [];
-      loggedWorkouts.push({ date, name: workoutName, duration, notes });
+      loggedWorkouts.push({ 
+        date, 
+        name: workoutName, 
+        duration: parseInt(duration), 
+        notes,
+        timestamp: new Date().toISOString()
+      });
       localStorage.setItem('loggedWorkouts', JSON.stringify(loggedWorkouts));
 
       const section = document.getElementById('submitted-data');
       section.innerHTML = `
-        <p><strong>Date:</strong> ${date}</p>
-        <p><strong>Workout Name:</strong> ${workoutName}</p>
-        <p><strong>Duration:</strong> ${duration} minutes</p>
-        <p><strong>Notes:</strong> ${notes}</p>
-        <p>Thank you for logging your workout! Your progress has been saved.</p>
-        <p><a href="progress.html">View your progress</a></p>
+        <div class="success-message">
+          <h3>✅ Workout Successfully Logged!</h3>
+          <p><strong>Date:</strong> ${new Date(date).toLocaleDateString()}</p>
+          <p><strong>Workout Name:</strong> ${workoutName}</p>
+          <p><strong>Duration:</strong> ${duration} minutes</p>
+          <p><strong>Notes:</strong> ${notes}</p>
+          <div class="action-links">
+            <p><a href="progress.html" class="button">View Your Progress</a></p>
+            <p><a href="form.html" class="button">Log Another Workout</a></p>
+            <p><a href="index.html">Return to Home</a></p>
+          </div>
+        </div>
       `;
     }
+
+    // Hamburger menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.querySelector('.nav-list');
+    hamburger?.addEventListener('click', () => {
+      navList.classList.toggle('active');
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!expanded));
+    });
 
     window.addEventListener('DOMContentLoaded', displaySubmittedData);
   </script>
