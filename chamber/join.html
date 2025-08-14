@@ -3,141 +3,299 @@
 <head>
   <meta charset="UTF-8">
   <meta name="author" content="Ty Pendleton">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Join the Las Vegas Chamber</title>
-  <meta name="description" content="Apply to join the Las Vegas Chamber of Commerce and enjoy exclusive membership benefits." />
-  <link rel="stylesheet" href="styles/normalize.css" />
-  <link rel="stylesheet" href="styles/styles.css" />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Apply to join the Las Vegas Chamber of Commerce and enjoy exclusive membership benefits. Choose from NP, Bronze, Silver, or Gold membership levels.">
+  <meta name="keywords" content="Las Vegas Chamber, membership application, business membership, chamber benefits">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Join the Las Vegas Chamber of Commerce">
+  <meta property="og:description" content="Apply for chamber membership and grow your business with networking, events, and exclusive benefits.">
+  <meta property="og:image" content="https://tpendleton10.github.io/wdd231/chamber/images/vegas-og.jpg">
+  <meta property="og:url" content="https://tpendleton10.github.io/wdd231/chamber/join.html">
+  
+  <title>Join the Las Vegas Chamber of Commerce | Membership Application</title>
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
-    <h1>Join the Las Vegas Chamber of Commerce</h1>
-    <nav>
-      <button id="menuToggle">☰ Menu</button>
-      <ul id="navList">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="discover.html">Discover</a></li>
-        <li><a href="directory.html">Directory</a></li>
-        <li><a class="active" href="join.html">Join</a></li>
+    <div class="site-branding">Las Vegas Chamber of Commerce</div>
+    <nav role="navigation" aria-label="Main navigation">
+      <button id="menuToggle" aria-expanded="false" aria-controls="navList" aria-label="Toggle navigation menu">
+        ☰ Menu
+      </button>
+      <ul id="navList" role="menubar">
+        <li role="none"><a role="menuitem" href="index.html">Home</a></li>
+        <li role="none"><a role="menuitem" href="discover.html">Discover</a></li>
+        <li role="none"><a role="menuitem" href="directory.html">Directory</a></li>
+        <li role="none"><a role="menuitem" class="active" href="join.html" aria-current="page">Join</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="container">
-    <section class="form-section">
-      <h2>Membership Application</h2>
-      <form method="get" action="thankyou.html">
-        <label>
-          First Name:
-          <input type="text" name="firstName" title="Enter your first name" required autocomplete="given-name">
-        </label>
-        <label>
-          Last Name:
-          <input type="text" name="lastName" title="Enter your last name" required autocomplete="family-name">
-        </label>
-        <label>
-          Title:
-          <input type="text" name="title" title="Your organizational title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
-        </label>
-        <label>
-          Email:
-          <input type="email" name="email" title="Enter a valid email" required autocomplete="email" placeholder="example@domain.com">
-        </label>
-        <label>
-          Mobile Phone:
-          <input type="tel" name="phone" title="Mobile phone number" required autocomplete="tel">
-        </label>
-        <label>
-          Organization Name:
-          <input type="text" name="organization" title="Business or organization name" required autocomplete="organization">
-        </label>
-        <label>
-          Membership Level:
-          <select name="membershipLevel" title="Select your membership level" required>
-            <option value="" disabled selected>Select a level</option>
-            <option value="NP">NP Membership</option>
-            <option value="Bronze">Bronze</option>
-            <option value="Silver">Silver</option>
-            <option value="Gold">Gold</option>
-          </select>
-        </label>
-        <label>
-          Description of Organization:
-          <textarea name="description" title="Brief description of your business or organization"></textarea>
-        </label>
-        <input type="hidden" name="timestamp" id="timestamp">
-        <input type="submit" value="Apply Now">
-      </form>
-    </section>
+  <main>
+    <h1>Join the Las Vegas Chamber of Commerce</h1>
+    
+    <div class="join-container">
+      <!-- Membership Application Form -->
+      <section class="form-section" aria-labelledby="form-heading">
+        <h2 id="form-heading">Membership Application</h2>
+        <form method="get" action="thankyou.html" novalidate>
+          <label for="firstName">
+            First Name *
+            <input type="text" 
+                   id="firstName" 
+                   name="firstName" 
+                   title="Enter your first name" 
+                   required 
+                   autocomplete="given-name"
+                   aria-describedby="firstName-error">
+            <span id="firstName-error" class="error-message" aria-live="polite"></span>
+          </label>
 
-    <section class="cards-section">
-      <div class="membership-card">
-        <h3>NP Membership</h3>
-        <p>No fee. Basic listing and newsletter inclusion.</p>
-        <a href="#" class="modal-trigger" data-modal="modal-np">Learn more</a>
-      </div>
-      <div class="membership-card">
-        <h3>Bronze Membership</h3>
-        <p>Includes training events and basic advertising.</p>
-        <a href="#" class="modal-trigger" data-modal="modal-bronze">Learn more</a>
-      </div>
-      <div class="membership-card">
-        <h3>Silver Membership</h3>
-        <p>Event access, spotlight features, and social media promotion.</p>
-        <a href="#" class="modal-trigger" data-modal="modal-silver">Learn more</a>
-      </div>
-      <div class="membership-card">
-        <h3>Gold Membership</h3>
-        <p>Premium sponsorships, ads, luncheons, top homepage listing.</p>
-        <a href="#" class="modal-trigger" data-modal="modal-gold">Learn more</a>
-      </div>
-    </section>
+          <label for="lastName">
+            Last Name *
+            <input type="text" 
+                   id="lastName" 
+                   name="lastName" 
+                   title="Enter your last name" 
+                   required 
+                   autocomplete="family-name"
+                   aria-describedby="lastName-error">
+            <span id="lastName-error" class="error-message" aria-live="polite"></span>
+          </label>
+
+          <label for="title">
+            Organizational Title
+            <input type="text" 
+                   id="title" 
+                   name="title" 
+                   title="Your organizational title (minimum 7 characters, letters, hyphens, and spaces only)" 
+                   autocomplete="organization-title"
+                   pattern="[A-Za-z\s\-]{7,}"
+                   aria-describedby="title-help title-error">
+            <div id="title-help" class="help-text">Minimum 7 characters. Letters, spaces, and hyphens only.</div>
+            <span id="title-error" class="error-message" aria-live="polite"></span>
+          </label>
+
+          <label for="email">
+            Email Address *
+            <input type="email" 
+                   id="email" 
+                   name="email" 
+                   title="Enter a valid email address" 
+                   required 
+                   autocomplete="email" 
+                   placeholder="example@domain.com"
+                   aria-describedby="email-error">
+            <span id="email-error" class="error-message" aria-live="polite"></span>
+          </label>
+
+          <label for="phone">
+            Mobile Phone Number *
+            <input type="tel" 
+                   id="phone" 
+                   name="phone" 
+                   title="Enter your mobile phone number" 
+                   required 
+                   autocomplete="tel"
+                   aria-describedby="phone-error">
+            <span id="phone-error" class="error-message" aria-live="polite"></span>
+          </label>
+
+          <label for="organization">
+            Business/Organization Name *
+            <input type="text" 
+                   id="organization" 
+                   name="organization" 
+                   title="Enter your business or organization name" 
+                   required 
+                   autocomplete="organization"
+                   aria-describedby="organization-error">
+            <span id="organization-error" class="error-message" aria-live="polite"></span>
+          </label>
+
+          <fieldset>
+            <legend>Membership Level *</legend>
+            <div class="radio-group" role="radiogroup" aria-required="true" aria-describedby="membership-error">
+              <label for="np-membership" class="radio-label">
+                <input type="radio" 
+                       id="np-membership" 
+                       name="membershipLevel" 
+                       value="NP" 
+                       title="Select NP Membership"
+                       required>
+                <span class="radio-text">NP Membership (Non-Profit - No Fee)</span>
+              </label>
+              
+              <label for="bronze-membership" class="radio-label">
+                <input type="radio" 
+                       id="bronze-membership" 
+                       name="membershipLevel" 
+                       value="Bronze" 
+                       title="Select Bronze Membership"
+                       required>
+                <span class="radio-text">Bronze Membership</span>
+              </label>
+              
+              <label for="silver-membership" class="radio-label">
+                <input type="radio" 
+                       id="silver-membership" 
+                       name="membershipLevel" 
+                       value="Silver" 
+                       title="Select Silver Membership"
+                       required>
+                <span class="radio-text">Silver Membership</span>
+              </label>
+              
+              <label for="gold-membership" class="radio-label">
+                <input type="radio" 
+                       id="gold-membership" 
+                       name="membershipLevel" 
+                       value="Gold" 
+                       title="Select Gold Membership"
+                       required>
+                <span class="radio-text">Gold Membership</span>
+              </label>
+            </div>
+            <span id="membership-error" class="error-message" aria-live="polite"></span>
+          </fieldset>
+
+          <label for="description">
+            Business/Organization Description
+            <textarea id="description" 
+                      name="description" 
+                      title="Brief description of your business or organization"
+                      rows="4"
+                      placeholder="Tell us about your business or organization..."></textarea>
+          </label>
+
+          <input type="hidden" name="timestamp" id="timestamp">
+
+          <input type="submit" value="Submit Application" class="submit-button">
+        </form>
+      </section>
+
+      <!-- Membership Cards Section -->
+      <section class="cards-section" aria-labelledby="membership-cards-heading">
+        <h2 id="membership-cards-heading">Membership Levels</h2>
+        
+        <div class="membership-card np-card" data-delay="0">
+          <h3>NP Membership</h3>
+          <p class="price">No Fee</p>
+          <p>Perfect for non-profit organizations looking to connect with the business community.</p>
+          <button type="button" class="modal-trigger" data-modal="modal-np" aria-label="Learn more about NP Membership">
+            Learn More
+          </button>
+        </div>
+
+        <div class="membership-card bronze-card" data-delay="0.2">
+          <h3>Bronze Membership</h3>
+          <p class="price">$150/year</p>
+          <p>Essential benefits including training events and basic advertising opportunities.</p>
+          <button type="button" class="modal-trigger" data-modal="modal-bronze" aria-label="Learn more about Bronze Membership">
+            Learn More
+          </button>
+        </div>
+
+        <div class="membership-card silver-card" data-delay="0.4">
+          <h3>Silver Membership</h3>
+          <p class="price">$300/year</p>
+          <p>Enhanced benefits with event access, spotlight features, and social media promotion.</p>
+          <button type="button" class="modal-trigger" data-modal="modal-silver" aria-label="Learn more about Silver Membership">
+            Learn More
+          </button>
+        </div>
+
+        <div class="membership-card gold-card" data-delay="0.6">
+          <h3>Gold Membership</h3>
+          <p class="price">$500/year</p>
+          <p>Premium membership with exclusive sponsorships, priority listings, and VIP events.</p>
+          <button type="button" class="modal-trigger" data-modal="modal-gold" aria-label="Learn more about Gold Membership">
+            Learn More
+          </button>
+        </div>
+      </section>
+    </div>
   </main>
 
-  <footer>
-    <p>Contact us: info@lvchamber.org | (702) 555-1234</p>
+  <footer role="contentinfo">
+    <address>
+      Contact: <a href="mailto:info@lvchamber.org">info@lvchamber.org</a> | 
+      <a href="tel:+17025551234">(702) 555-1234</a>
+    </address>
     <p>&copy; <span id="year"></span> Las Vegas Chamber | WDD 231 | Last Modified: <span id="lastModified"></span></p>
   </footer>
 
   <!-- Modals -->
-  <div id="modal-np" class="modal"><div class="modal-content"><span class="close">&times;</span><p>Non-Profit Membership includes basic listing and newsletter inclusion.</p></div></div>
-  <div id="modal-bronze" class="modal"><div class="modal-content"><span class="close">&times;</span><p>Bronze benefits: training events, ads, and community inclusion.</p></div></div>
-  <div id="modal-silver" class="modal"><div class="modal-content"><span class="close">&times;</span><p>Silver benefits: event access, social promotions, and homepage spotlight.</p></div></div>
-  <div id="modal-gold" class="modal"><div class="modal-content"><span class="close">&times;</span><p>Gold includes all other benefits plus premium sponsorships and luncheons.</p></div></div>
+  <div id="modal-np" class="modal" role="dialog" aria-labelledby="np-title" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" aria-label="Close modal">&times;</button>
+      <h3 id="np-title">NP Membership Benefits</h3>
+      <ul>
+        <li>Basic business listing in our directory</li>
+        <li>Monthly newsletter inclusion</li>
+        <li>Access to networking events</li>
+        <li>Community event notifications</li>
+        <li>Resource sharing opportunities</li>
+      </ul>
+      <p><strong>Perfect for:</strong> Non-profit organizations, community groups, and charitable organizations.</p>
+    </div>
+  </div>
 
-  <script>
-    // Timestamp for hidden field
-    document.getElementById('timestamp').value = new Date().toISOString();
+  <div id="modal-bronze" class="modal" role="dialog" aria-labelledby="bronze-title" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" aria-label="Close modal">&times;</button>
+      <h3 id="bronze-title">Bronze Membership Benefits</h3>
+      <ul>
+        <li>All NP Membership benefits</li>
+        <li>Business training workshops</li>
+        <li>Basic advertising opportunities</li>
+        <li>Discounted event tickets</li>
+        <li>Business referral opportunities</li>
+        <li>Chamber ribbon cutting ceremonies</li>
+      </ul>
+      <p><strong>Perfect for:</strong> Small businesses and startups looking to grow their network.</p>
+    </div>
+  </div>
 
-    // Modal logic
-    const triggers = document.querySelectorAll('.modal-trigger');
-    const modals = document.querySelectorAll('.modal');
-    const closes = document.querySelectorAll('.close');
+  <div id="modal-silver" class="modal" role="dialog" aria-labelledby="silver-title" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" aria-label="Close modal">&times;</button>
+      <h3 id="silver-title">Silver Membership Benefits</h3>
+      <ul>
+        <li>All Bronze Membership benefits</li>
+        <li>Featured business spotlight opportunities</li>
+        <li>Social media promotion</li>
+        <li>Priority event registration</li>
+        <li>Quarterly business luncheons</li>
+        <li>Enhanced directory listing</li>
+        <li>Logo on chamber website</li>
+      </ul>
+      <p><strong>Perfect for:</strong> Established businesses ready to increase their visibility.</p>
+    </div>
+  </div>
 
-    triggers.forEach(trigger => {
-      trigger.addEventListener('click', e => {
-        e.preventDefault();
-        const modalId = trigger.dataset.modal;
-        document.getElementById(modalId).style.display = 'block';
-      });
-    });
+  <div id="modal-gold" class="modal" role="dialog" aria-labelledby="gold-title" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" aria-label="Close modal">&times;</button>
+      <h3 id="gold-title">Gold Membership Benefits</h3>
+      <ul>
+        <li>All Silver Membership benefits</li>
+        <li>Premium homepage business spotlight</li>
+        <li>Exclusive VIP networking events</li>
+        <li>Speaking opportunities at events</li>
+        <li>Priority sponsorship opportunities</li>
+        <li>Dedicated account manager</li>
+        <li>Annual chamber awards consideration</li>
+        <li>Board of directors nomination eligibility</li>
+      </ul>
+      <p><strong>Perfect for:</strong> Leading businesses seeking maximum exposure and influence.</p>
+    </div>
+  </div>
 
-    closes.forEach(close => {
-      close.addEventListener('click', () => {
-        modals.forEach(modal => modal.style.display = 'none');
-      });
-    });
-
-    window.addEventListener('click', e => {
-      if (e.target.classList.contains('modal')) {
-        e.target.style.display = 'none';
-      }
-    });
-
-    // Footer Info
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('lastModified').textContent = document.lastModified;
-  </script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/join.js"></script>
 </body>
 </html>

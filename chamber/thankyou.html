@@ -1,65 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thank You - Las Vegas Chamber</title>
-  <meta name="description" content="Thank you for applying to join the Las Vegas Chamber of Commerce." />
-  <link rel="stylesheet" href="styles/normalize.css" />
-  <link rel="stylesheet" href="styles/styles.css" />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Thank you for applying to join the Las Vegas Chamber of Commerce. Your membership application has been received.">
+  <meta name="author" content="Ty Pendleton">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Application Received - Las Vegas Chamber">
+  <meta property="og:description" content="Thank you for your membership application to the Las Vegas Chamber of Commerce.">
+  <meta property="og:image" content="https://tpendleton10.github.io/wdd231/chamber/images/vegas-og.jpg">
+  <meta property="og:url" content="https://tpendleton10.github.io/wdd231/chamber/thankyou.html">
+  
+  <title>Application Received - Las Vegas Chamber of Commerce</title>
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
-    <h1>Las Vegas Chamber of Commerce</h1>
-    <nav>
-      <button id="menuToggle">☰ Menu</button>
-      <ul id="navList">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="discover.html">Discover</a></li>
-        <li><a href="directory.html">Directory</a></li>
-        <li><a class="active" href="join.html">Join</a></li>
+    <div class="site-branding">Las Vegas Chamber of Commerce</div>
+    <nav role="navigation" aria-label="Main navigation">
+      <button id="menuToggle" aria-expanded="false" aria-controls="navList" aria-label="Toggle navigation menu">
+        ☰ Menu
+      </button>
+      <ul id="navList" role="menubar">
+        <li role="none"><a role="menuitem" href="index.html">Home</a></li>
+        <li role="none"><a role="menuitem" href="discover.html">Discover</a></li>
+        <li role="none"><a role="menuitem" href="directory.html">Directory</a></li>
+        <li role="none"><a role="menuitem" href="join.html">Join</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="thankyou-message">
-    <h2>Thank You for Applying!</h2>
-    <p>We’ve received your membership application. Here is the information you submitted:</p>
+  <main>
+    <h1>Application Received</h1>
+    
+    <div class="thankyou-container">
+      <section class="thankyou-message" aria-labelledby="thank-you-heading">
+        <div class="success-icon" aria-hidden="true">✓</div>
+        <h2 id="thank-you-heading">Thank You for Your Application!</h2>
+        <p>We've received your membership application for the Las Vegas Chamber of Commerce. Our team will review your application and contact you within 2-3 business days.</p>
+      </section>
 
-    <div class="form-data" id="formData">
+      <section class="application-summary" aria-labelledby="summary-heading">
+        <h3 id="summary-heading">Application Summary</h3>
+        <div class="form-data" id="formData" role="region" aria-label="Submitted application information">
+          <!-- Form data will be populated here by JavaScript -->
+        </div>
+      </section>
+
+      <section class="next-steps" aria-labelledby="next-steps-heading">
+        <h3 id="next-steps-heading">What Happens Next?</h3>
+        <ol class="steps-list">
+          <li>
+            <strong>Application Review</strong>
+            <p>Our membership committee will review your application within 2-3 business days.</p>
+          </li>
+          <li>
+            <strong>Welcome Package</strong>
+            <p>Upon approval, you'll receive a welcome package with your membership benefits and materials.</p>
+          </li>
+          <li>
+            <strong>Onboarding Call</strong>
+            <p>A chamber representative will contact you to schedule an onboarding call and answer any questions.</p>
+          </li>
+          <li>
+            <strong>Start Networking</strong>
+            <p>Begin taking advantage of all the networking events, training opportunities, and business growth resources available to chamber members.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="contact-info" aria-labelledby="contact-heading">
+        <h3 id="contact-heading">Questions?</h3>
+        <p>If you have any questions about your application or our membership benefits, please don't hesitate to contact us:</p>
+        <div class="contact-details">
+          <p>
+            <strong>Email:</strong> 
+            <a href="mailto:membership@lvchamber.org">membership@lvchamber.org</a>
+          </p>
+          <p>
+            <strong>Phone:</strong> 
+            <a href="tel:+17025551234">(702) 555-1234</a>
+          </p>
+          <p>
+            <strong>Office Hours:</strong> 
+            Monday - Friday, 8:00 AM - 5:00 PM PST
+          </p>
+        </div>
+      </section>
+
+      <div class="action-buttons">
+        <a href="index.html" class="cta-button" aria-label="Return to chamber homepage">
+          Return to Home
+        </a>
+        <a href="directory.html" class="cta-button secondary" aria-label="Browse our business directory">
+          Browse Members
+        </a>
+      </div>
     </div>
   </main>
 
-  <footer>
-    <p>Contact us: info@lvchamber.org | (702) 555-1234</p>
+  <footer role="contentinfo">
+    <address>
+      Contact: <a href="mailto:info@lvchamber.org">info@lvchamber.org</a> | 
+      <a href="tel:+17025551234">(702) 555-1234</a>
+    </address>
     <p>&copy; <span id="year"></span> Las Vegas Chamber | WDD 231 | Last Modified: <span id="lastModified"></span></p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('lastModified').textContent = document.lastModified;
-
-    const params = new URLSearchParams(window.location.search);
-    const requiredFields = {
-      "firstName": "First Name",
-      "lastName": "Last Name",
-      "email": "Email",
-      "phone": "Mobile Phone",
-      "organization": "Organization Name",
-      "timestamp": "Submitted At"
-    };
-
-    const formDataContainer = document.getElementById('formData');
-
-    Object.keys(requiredFields).forEach(field => {
-      const value = params.get(field);
-      if (value) {
-        const p = document.createElement('p');
-        p.innerHTML = `<strong>${requiredFields[field]}:</strong> ${decodeURIComponent(value)}`;
-        formDataContainer.appendChild(p);
-      }
-    });
-  </script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/thankyou.js"></script>
 </body>
 </html>

@@ -869,3 +869,647 @@ form button:focus {
     color: black;
   }
 }
+
+/* Join Page Specific Styles */
+.join-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.form-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.form-section h2 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: var(--primary);
+  gap: 0.5rem;
+}
+
+form input,
+form select,
+form textarea {
+  padding: 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  font-family: var(--font);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 34, 68, 0.1);
+}
+
+form input.error,
+form select.error,
+form textarea.error {
+  border-color: var(--error-color);
+  background-color: #fff5f5;
+}
+
+form input[data-focused="true"],
+form select[data-focused="true"],
+form textarea[data-focused="true"] {
+  border-color: var(--secondary);
+}
+
+/* Error Messages */
+.error-message {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  font-weight: normal;
+  margin-top: 0.25rem;
+  min-height: 1.2em;
+}
+
+.help-text {
+  color: #666;
+  font-size: 0.875rem;
+  font-weight: normal;
+  margin-top: 0.25rem;
+}
+
+/* Fieldset and Radio Buttons */
+fieldset {
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0;
+  transition: border-color 0.3s ease;
+}
+
+fieldset.error {
+  border-color: var(--error-color);
+  background-color: #fff5f5;
+}
+
+legend {
+  font-weight: bold;
+  color: var(--primary);
+  padding: 0 0.5rem;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  font-weight: normal;
+}
+
+.radio-label:hover {
+  background-color: rgba(0, 34, 68, 0.05);
+}
+
+.radio-label input[type="radio"] {
+  margin: 0;
+  width: auto;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.radio-text {
+  flex: 1;
+}
+
+/* Submit Button */
+.submit-button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submit-button:hover,
+.submit-button:focus {
+  background: #003366;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Membership Cards Section */
+.cards-section {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.cards-section h2 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* Membership Cards */
+.membership-card {
+  background: white;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  transition: all 0.6s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.membership-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+  transition: left 0.6s ease;
+}
+
+.membership-card:hover::before {
+  left: 100%;
+}
+
+.membership-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border-color: var(--secondary);
+}
+
+.membership-card h3 {
+  color: var(--primary);
+  margin: 0 0 0.5rem 0;
+  font-size: 1.4rem;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--secondary);
+  margin: 0.5rem 0;
+}
+
+.membership-card p {
+  color: #666;
+  margin: 1rem 0;
+  line-height: 1.5;
+}
+
+.modal-trigger {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.modal-trigger:hover,
+.modal-trigger:focus {
+  background: #003366;
+  transform: translateY(-2px);
+}
+
+/* Card Specific Animations */
+.np-card {
+  border-left: 4px solid #28a745;
+}
+
+.bronze-card {
+  border-left: 4px solid #cd7f32;
+}
+
+.silver-card {
+  border-left: 4px solid #c0c0c0;
+}
+
+.gold-card {
+  border-left: 4px solid #ffd700;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: white;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: slideIn 0.3s ease;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { 
+    transform: translateY(-50px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+.modal-content h3 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.modal-content ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.modal-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--primary);
+  background: rgba(0, 34, 68, 0.1);
+}
+
+/* Thank You Page Styles */
+.thankyou-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.thankyou-message {
+  text-align: center;
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  border: 1px solid var(--border);
+}
+
+.success-icon {
+  font-size: 4rem;
+  color: var(--success-color);
+  margin-bottom: 1rem;
+  animation: bounceIn 0.6s ease;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.thankyou-message h2 {
+  color: var(--success-color);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.application-summary {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  border: 1px solid var(--border);
+}
+
+.application-summary h3 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* Form Data Display */
+.application-details {
+  display: grid;
+  gap: 1rem;
+}
+
+.application-details dt {
+  font-weight: bold;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.application-details dd {
+  background: var(--light-bg);
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin: 0 0 1rem 0;
+  border-left: 3px solid var(--secondary);
+}
+
+.field-icon {
+  font-size: 1.2rem;
+}
+
+.required-indicator {
+  color: var(--error-color);
+}
+
+.required-field dd {
+  border-left-color: var(--primary);
+}
+
+.optional-field dd {
+  border-left-color: #ccc;
+}
+
+/* No Data Message */
+.no-data-message {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #fff5f5;
+  border: 2px solid #ffebee;
+  border-radius: 12px;
+}
+
+.warning-icon {
+  font-size: 3rem;
+  color: #ff9800;
+  margin-bottom: 1rem;
+}
+
+.no-data-message h4 {
+  color: var(--error-color);
+  margin-bottom: 1rem;
+}
+
+/* Next Steps and Contact Info */
+.next-steps,
+.contact-info {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  border: 1px solid var(--border);
+}
+
+.next-steps h3,
+.contact-info h3 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.steps-list {
+  counter-reset: step-counter;
+  list-style: none;
+  padding: 0;
+}
+
+.steps-list li {
+  counter-increment: step-counter;
+  background: var(--light-bg);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--secondary);
+  position: relative;
+}
+
+.steps-list li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: -15px;
+  top: 1rem;
+  background: var(--primary);
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.steps-list strong {
+  color: var(--primary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.contact-details {
+  background: var(--light-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--secondary);
+}
+
+.contact-details p {
+  margin: 0.5rem 0;
+}
+
+.contact-details a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-details a:hover,
+.contact-details a:focus {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.cta-button.secondary {
+  background: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.cta-button.secondary:hover,
+.cta-button.secondary:focus {
+  background: var(--primary);
+  color: white;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .join-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .form-section {
+    flex: 2;
+  }
+  
+  .cards-section {
+    flex: 1;
+    margin-left: 2rem;
+  }
+  
+  .radio-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .radio-label {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .join-container {
+    padding: 1rem;
+  }
+  
+  .form-section,
+  .cards-section {
+    padding: 1.5rem;
+  }
+  
+  .modal-content {
+    margin: 10% auto;
+    padding: 1.5rem;
+  }
+  
+  .thankyou-container {
+    padding: 1rem;
+  }
+  
+  .thankyou-message {
+    padding: 2rem 1.5rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .action-buttons .cta-button {
+    width: 100%;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .membership-card,
+  .modal-content,
+  .form-section {
+    border-width: 3px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .membership-card,
+  .modal,
+  .modal-content,
+  .success-icon {
+    animation: none;
+    transition: none;
+  }
+}
