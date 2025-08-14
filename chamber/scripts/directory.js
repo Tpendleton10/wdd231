@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const listButton = document.getElementById('listView');
 
   // Set default layout
-  container.className = 'grid-view';
+  if (container) {
+    container.className = 'grid-view';
+  }
 
   // Fetch and display members
   async function fetchMembers() {
@@ -12,28 +14,54 @@ document.addEventListener('DOMContentLoaded', () => {
       const resp = await fetch('data/members.json');
       if (!resp.ok) throw new Error(`HTTP error! status: ${resp.status}`);
       const data = await resp.json();
-      displayMembers(data);
+      
+      // Handle the nested structure where members are in data.members
+      const membersList = data.members || data;
+      displayMembers(membersList);
     } catch (err) {
       console.error('Error fetching members:', err);
-      container.innerHTML = `<p class="error">Failed to load member data. Please try again later.</p>`;
+      if (container) {
+        container.innerHTML = `<p class="error">Failed to load member data. Please try again later.</p>`;
+      }
     }
   }
 
   function displayMembers(list) {
+    if (!container) return;
+    
     container.innerHTML = ''; // Clear existing content
-    list.forEach(m => {
+    
+    if (!Array.isArray(list) || list.length === 0) {
+      container.innerHTML = '<p class="error">No member data available.</p>';
+      return;
+    }
+    
+    list.forEach(member => {
       const card = document.createElement('section');
       card.className = 'member-card';
+      
+      // Ensure all required fields exist
+      const name = member.name || 'Unknown Business';
+      const description = member.description || 'No description available';
+      const address = member.address || 'Address not provided';
+      const phone = member.phone || 'Phone not provided';
+      const website = member.website || '#';
+      const image = member.image || 'placeholder-logo.jpg';
+      const membership = member.membership || 1;
+      
+      // Determine membership level text
+      const membershipText = getMembershipText(membership);
+      
       card.innerHTML = `
-        <img src="images/${m.image}" alt="${m.name} logo">
+        <img src="images/${image}" alt="${name} logo" onerror="this.src='images/placeholder-logo.jpg'">
         <div class="member-info">
-          <h3>${m.name}</h3>
-          <p>${m.description}</p>
-          <p>${m.address}</p>
-          <p>${m.phone}</p>
-          <a href="${m.website}" target="_blank">Website</a>
-          <span class="membership level-${m.membership}">
-            ${m.membership === 3 ? 'Gold' : m.membership === 2 ? 'Silver' : 'Member'}
+          <h3>${name}</h3>
+          <p class="member-description">${description}</p>
+          <p class="member-address">📍 ${address}</p>
+          <p class="member-phone">📞 ${phone}</p>
+          <a href="${ensureProtocol(website)}" target="_blank" rel="noopener noreferrer" class="member-website">🌐 Website</a>
+          <span class="membership level-${membership}">
+            ${membershipText}
           </span>
         </div>
       `;
@@ -41,14 +69,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function getMembershipText(level) {
+    switch(level) {
+      case 3:
+        return 'Gold Member';
+      case 2:
+        return 'Silver Member';
+      case 1:
+        return 'Bronze Member';
+      default:
+        return 'Member';
+    }
+  }
+
+  function ensureProtocol(url) {
+    if (!url || url === '#') return '#';
+    
+    if (!url.match(/^https?:\/\//)) {
+      return `https://${url}`;
+    }
+    
+    return url;
+  }
+
   // View toggle buttons
-  gridButton.onclick = () => {
-    container.className = 'grid-view';
-  };
+  if (gridButton) {
+    gridButton.onclick = () => {
+      if (container) {
+        container.className = 'grid-view';
+        gridButton.classList.add('active');
+        if (listButton) listButton.classList.remove('active');
+      }
+    };
+  }
 
-  listButton.onclick = () => {
-    container.className = 'list-view';
-  };
+  if (listButton) {
+    listButton.onclick = () => {
+      if (container) {
+        container.className = 'list-view';
+        listButton.classList.add('active');
+        if (gridButton) gridButton.classList.remove('active');
+      }
+    };
+  }
 
+  // Initialize with grid view active
+  if (gridButton) {
+    gridButton.classList.add('active');
+  }
+
+  // Fetch members data
   fetchMembers();
 });

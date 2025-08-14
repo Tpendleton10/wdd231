@@ -3,68 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Las Vegas Chamber of Commerce – promoting local businesses, networking, and community growth.">
+  <meta name="description" content="Las Vegas Chamber of Commerce promoting local businesses, networking, and community growth. Join today for business opportunities.">
+  <meta name="keywords" content="Las Vegas, Chamber of Commerce, business, networking, local businesses, Nevada">
   <meta name="author" content="Ty Pendleton">
-  <meta property="og:title" content="Las Vegas Chamber of Commerce">
-  <meta property="og:description" content="Connect, grow, and discover Las Vegas local businesses." />
-  <meta property="og:image" content="images/vegas-og.jpg" />
-  <meta property="og:url" content="https://yourgithub.io/wdd231/chamber/index.html" />
-  <title>Las Vegas Chamber | Home</title>
+  
+  <!-- Enhanced Open Graph -->
+  <meta property="og:title" content="Las Vegas Chamber of Commerce - Home">
+  <meta property="og:description" content="Connect, grow, and discover Las Vegas local businesses. Join our vibrant business community today.">
+  <meta property="og:image" content="https://Tpendleton10.github.io/wdd231/chamber/images/vegas-og.jpg">
+  <meta property="og:url" content="https://Tpendleton10.github.io/wdd231/chamber/index.html">
+  <meta property="og:type" content="website">
+  
+  <title>Las Vegas Chamber of Commerce | Home - Business Networking & Growth</title>
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="styles/styles.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
+  
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
 <header>
-  <h1>Las Vegas Chamber of Commerce</h1>
-  <nav>
-    <button id="menuToggle">☰ Menu</button>
-    <ul id="navList">
-      <li><a class="active" href="index.html">Home</a></li>
-      <li><a href="discover.html">Discover</a></li>
-      <li><a href="directory.html">Directory</a></li>
-      <li><a href="join.html">Join</a></li>
-    </ul>
-  </nav>
+  <div class="header-content">
+    <div class="site-branding">Las Vegas Chamber of Commerce</div>
+    <nav role="navigation" aria-label="Main navigation">
+      <button id="menuToggle" aria-expanded="false" aria-controls="navList" aria-label="Toggle navigation menu">
+        ☰ Menu
+      </button>
+      <ul id="navList" role="menubar">
+        <li role="none"><a role="menuitem" class="active" href="index.html" aria-current="page">Home</a></li>
+        <li role="none"><a role="menuitem" href="discover.html">Discover</a></li>
+        <li role="none"><a role="menuitem" href="directory.html">Directory</a></li>
+        <li role="none"><a role="menuitem" href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <main>
-  <section class="hero">
-    <h2>Welcome to the Las Vegas Business Community</h2>
-    <p>Connecting entrepreneurs, professionals, and the community to grow together.</p>
-    <a href="join.html" class="cta-button">Join Now</a>
+  <!-- H1 as first element in main -->
+  <h1>Las Vegas Chamber of Commerce</h1>
+  
+  <!-- Hero Section -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-content">
+      <h2 id="hero-heading">Welcome to the Las Vegas Business Community</h2>
+      <p>Connecting entrepreneurs, professionals, and the community to grow together.</p>
+      <a href="join.html" class="cta-button" aria-label="Join the Las Vegas Chamber of Commerce">Join the Chamber</a>
+    </div>
   </section>
 
-  <section class="spotlight">
-    <h2>Business Spotlight</h2>
-    <div class="spotlight-cards">
-      <article>
-        <img src="images/sunrise-cafe.jpg" alt="Sunrise Cafe logo">
-        <h3>Sunrise Cafe</h3>
-        <p>Local breakfast favorite on Las Vegas Boulevard.</p>
+  <!-- Current Events Section -->
+  <section class="current-events" aria-labelledby="events-heading">
+    <h2 id="events-heading">Current Events</h2>
+    <div class="events-container">
+      <article class="event-card">
+        <h3>Networking Mixer</h3>
+        <p class="event-date">
+          <time datetime="2025-02-15">February 15, 2025</time>
+        </p>
+        <p>Join us for our monthly networking event at the Downtown Las Vegas Events Center. Connect with local business leaders and explore new opportunities.</p>
+        <a href="#" class="event-link" aria-label="Learn more about the Networking Mixer event">Learn More</a>
       </article>
-      <article>
-        <img src="images/vintner-grill.png" alt="Vintner logo">
-        <h3>Famous Vintner</h3>
-        <p>Premium wine shop and tasting room in downtown.</p>
+      <article class="event-card">
+        <h3>Business Development Workshop</h3>
+        <p class="event-date">
+          <time datetime="2025-02-28">February 28, 2025</time>
+        </p>
+        <p>A comprehensive workshop covering digital marketing strategies, financial planning, and growth tactics for small businesses.</p>
+        <a href="#" class="event-link" aria-label="Register for the Business Development Workshop">Register Now</a>
       </article>
     </div>
   </section>
 
-  <section class="weather-cta">
-    <div id="weather"></div>
-    <a href="directory.html" class="cta-button">Explore Local Businesses</a>
+  <!-- Weather Section -->
+  <section class="weather-section" aria-labelledby="weather-heading">
+    <div class="weather-container">
+      <div id="weather" class="weather-content" role="region" aria-live="polite" aria-label="Current weather information">
+        <h2 id="weather-heading">Las Vegas Weather</h2>
+        <p>Loading weather data...</p>
+      </div>
+      <div class="weather-cta">
+        <a href="directory.html" class="cta-button" aria-label="Explore local businesses in our directory">Explore Local Businesses</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Spotlight Section -->
+  <section class="spotlight" aria-labelledby="spotlight-heading">
+    <h2 id="spotlight-heading">Business Spotlight</h2>
+    <p class="spotlight-subtitle">Featuring our Gold and Silver Chamber Members</p>
+    <div class="spotlight-cards" id="spotlightContainer" role="region" aria-live="polite" aria-label="Featured chamber member businesses">
+      <!-- Spotlight cards will be dynamically loaded here -->
+    </div>
   </section>
 </main>
 
-<footer>
-  <p>Contact: info@lvchamber.org | (702) 555‑1234</p>
-  <p>&copy; <span id="year"></span> | Your Name | WDD 231 | Last Modified: <span id="lastModified"></span></p>
+<footer role="contentinfo">
+  <address>
+    Contact: <a href="mailto:info@lvchamber.org">info@lvchamber.org</a> | 
+    <a href="tel:+17025551234">(702) 555-1234</a>
+  </address>
+  <p>&copy; <span id="year"></span> Las Vegas Chamber | WDD 231 | Last Modified: <span id="lastModified"></span></p>
 </footer>
 
+<!-- Scripts loaded at end for performance -->
 <script src="scripts/main.js"></script>
-<script src="scripts/discovery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
 <script src="scripts/weather.js"></script>
 <script src="scripts/spotlight.js"></script>
 </body>

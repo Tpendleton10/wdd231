@@ -5,7 +5,7 @@
       "address": "123 Sunrise Blvd, Las Vegas, NV",
       "phone": "(702) 123-4567",
       "website": "https://sunrisecafe.example.com",
-      "image": "sunrisecafe.jpg",
+      "image": "sunrise-cafe.jpg",
       "membership": 1,
       "description": "A cozy breakfast spot in the heart of Las Vegas."
     },
@@ -14,7 +14,7 @@
       "address": "456 Vine St, Las Vegas, NV",
       "phone": "(702) 234-5678",
       "website": "https://vintnerwine.example.com",
-      "image": "vintner.jpg",
+      "image": "vintner-grill.jpg",
       "membership": 3,
       "description": "Downtown's favorite wine tasting room and shop."
     },
