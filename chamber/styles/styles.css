@@ -843,7 +843,7 @@ form button:focus {
 }
 
 /* High contrast mode support */
-@media (prefers-contrast: high) {
+@media (prefers-contrast: more) {
   :root {
     --primary: #000000;
     --secondary: #ffff00;
