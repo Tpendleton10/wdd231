@@ -1,131 +1,91 @@
-/* base.css - Complete Updated Version */
+/* base.css - Optimized Version */
 
-/* Color variables */
+/* CSS Variables */
 :root {
   --primary-blue: #0077b6;
   --secondary-blue: #005f73;
   --soft-gray: #f0f4f8;
   --dark-slate: #023047;
   --text-color: #333333;
-  --background-color: var(--soft-gray);
-  --focus-outline: 3px solid var(--primary-blue);
   --white: #ffffff;
-  --light-border: #e0e0e0;
-  --success-green: #d4edda;
-  --success-border: #c3e6cb;
-  --success-text: #155724;
-  --shadow-light: 0 2px 4px rgba(0,0,0,0.1);
-  --shadow-medium: 0 2px 6px rgba(0,0,0,0.15);
-  --shadow-heavy: 0 4px 12px rgba(0,0,0,0.2);
+  --focus-outline: 3px solid var(--primary-blue);
+  --shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-/* Global resets and base styles */
-*,
-*::before,
-*::after {
+/* Reset and Base */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
 body {
   font-family: "Open Sans", Arial, sans-serif;
-  background-color: var(--background-color);
+  background-color: var(--soft-gray);
   color: var(--text-color);
   margin: 0;
-  padding: 0;
   line-height: 1.6;
-  font-size: 16px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Headings */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
   color: var(--primary-blue);
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  line-height: 1.25;
+  margin: 0 0 0.5rem 0;
 }
 
-h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
 
-h2 {
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-/* Links */
+/* Links and Buttons */
 a {
   color: var(--primary-blue);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-a:hover,
-a:focus {
+a:hover, a:focus {
   text-decoration: underline;
   color: var(--secondary-blue);
-  outline: none;
 }
 
-/* Buttons */
-button, .button {
+button, .btn {
   font-family: "Montserrat", sans-serif;
   background-color: var(--primary-blue);
   color: var(--white);
   border: none;
   padding: 0.75rem 1.5rem;
-  cursor: pointer;
   border-radius: 6px;
+  cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 1rem;
-  font-weight: 500;
-  display: inline-block;
   text-decoration: none;
-  text-align: center;
+  display: inline-block;
 }
 
-button:hover,
-button:focus,
-.button:hover,
-.button:focus {
+button:hover, button:focus, .btn:hover, .btn:focus {
   background-color: var(--secondary-blue);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
-  outline: none;
+  box-shadow: var(--shadow);
 }
 
-button:active,
-.button:active {
-  transform: translateY(0);
-}
-
-/* Header */
+/* Layout */
 header {
   background-color: var(--primary-blue);
   color: var(--white);
   padding: 1rem 2rem;
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-header h1 {
+.nav-brand {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
   color: var(--white);
-  margin: 0;
-  font-size: 2rem;
-}
-
-/* Navigation */
-nav {
-  margin-top: 1rem;
 }
 
 .nav-list {
@@ -136,23 +96,19 @@ nav {
   gap: 2rem;
 }
 
-.nav-list li a {
+.nav-list a {
   color: var(--white);
-  text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 
-.nav-list li a:hover,
-.nav-list li a:focus,
-.nav-list li a[aria-current="page"] {
+.nav-list a:hover, .nav-list a:focus, .nav-list a[aria-current="page"] {
   background-color: var(--secondary-blue);
   text-decoration: none;
 }
 
-/* Hamburger menu - hidden by default */
 #hamburger {
   display: none;
   background: none;
@@ -163,7 +119,6 @@ nav {
   cursor: pointer;
 }
 
-/* Main content */
 main {
   flex: 1;
   padding: 2rem;
@@ -172,13 +127,17 @@ main {
   width: 100%;
 }
 
-/* Sections */
-section {
-  margin-bottom: 3rem;
+main h1 {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-/* Hero section */
-#hero {
+.homepage main h1 {
+  display: none;
+}
+
+/* Components */
+.hero {
   text-align: center;
   padding: 3rem 1rem;
   background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
@@ -187,77 +146,65 @@ section {
   margin-bottom: 3rem;
 }
 
-#hero h2 {
+.hero h2 {
   color: var(--white);
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-#hero p {
+.hero p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   opacity: 0.9;
 }
 
-#hero img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: var(--shadow-heavy);
-}
-
-/* Workout cards grid */
-#workouts-container,
-#workouts-list {
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   padding: 1rem 0;
 }
 
-.workout-card {
+.card {
   background-color: var(--white);
   border-radius: 12px;
-  box-shadow: var(--shadow-light);
+  box-shadow: var(--shadow);
   transition: all 0.3s ease;
   cursor: pointer;
   overflow: hidden;
-  border: 2px solid transparent;
 }
 
-.workout-card:hover,
-.workout-card:focus-within {
+.card:hover, .card:focus-within {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-heavy);
   border-color: var(--primary-blue);
 }
 
-.workout-card img {
+.card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-.workout-card h3 {
+.card h3 {
   margin: 1rem;
   margin-bottom: 0.5rem;
 }
 
-.workout-card p {
+.card p {
   margin: 0.5rem 1rem;
   color: #666;
   font-size: 0.95rem;
 }
 
-.workout-card .details-btn {
+.card button {
   margin: 1rem;
   width: calc(100% - 2rem);
   padding: 0.75rem;
   font-size: 0.9rem;
 }
 
-/* Modal Styles */
-#modal {
+/* Modal */
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -265,8 +212,8 @@ section {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
-  overflow: auto;
   padding: 2rem;
+  overflow: auto;
 }
 
 .modal-content {
@@ -275,14 +222,13 @@ section {
   padding: 2rem;
   border-radius: 12px;
   max-width: 600px;
-  width: 100%;
   position: relative;
   max-height: 80vh;
   overflow-y: auto;
-  box-shadow: var(--shadow-heavy);
+  box-shadow: var(--shadow);
 }
 
-#modal-close {
+.modal-close {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -291,95 +237,63 @@ section {
   border: none;
   cursor: pointer;
   color: #999;
-  padding: 0;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
 }
 
-#modal-close:hover,
-#modal-close:focus {
+.modal-close:hover, .modal-close:focus {
   background-color: #f0f0f0;
   color: var(--text-color);
   transform: none;
 }
 
-.modal-content img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.modal-content h4 {
-  color: var(--primary-blue);
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.modal-content ul {
-  padding-left: 1.5rem;
-}
-
-.modal-content li {
-  margin-bottom: 0.5rem;
-}
-
-/* Form styling */
-form {
+/* Forms */
+.form {
   max-width: 600px;
   margin: 0 auto;
   background-color: var(--white);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: var(--shadow-light);
+  box-shadow: var(--shadow);
 }
 
-form label {
+.form label {
   display: block;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
-  color: var(--text-color);
 }
 
-form input,
-form textarea,
-form select {
+.form input, .form textarea, .form select {
   width: 100%;
   padding: 0.75rem;
-  border: 2px solid var(--light-border);
+  border: 2px solid #e0e0e0;
   border-radius: 6px;
   font-size: 1rem;
-  font-family: inherit;
   transition: border-color 0.3s ease;
 }
 
-form input:focus,
-form textarea:focus,
-form select:focus {
-  outline: none;
+.form input:focus, .form textarea:focus, .form select:focus {
   border-color: var(--primary-blue);
   box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.1);
 }
 
-form button {
+.form button {
   margin-top: 2rem;
   width: 100%;
   padding: 1rem;
   font-size: 1.1rem;
 }
 
-/* Filter form specific styling */
-#filter-form {
+.filter-form {
   background-color: var(--white);
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: var(--shadow-light);
+  box-shadow: var(--shadow);
   margin-bottom: 2rem;
   display: flex;
   gap: 1rem;
@@ -387,69 +301,56 @@ form button {
   flex-wrap: wrap;
 }
 
-#filter-form label {
+.filter-form label {
   margin: 0;
   font-weight: 600;
 }
 
-#filter-form select {
+.filter-form select {
   min-width: 150px;
   margin-top: 0.25rem;
 }
 
-#filter-form button {
+.filter-form button {
   margin: 0;
   width: auto;
   padding: 0.75rem 1.5rem;
 }
 
-/* Progress Page Styles */
-.logged-workout {
+/* Progress */
+.progress-item {
   background-color: var(--white);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   border-radius: 8px;
-  box-shadow: var(--shadow-light);
+  box-shadow: var(--shadow);
   border-left: 4px solid var(--primary-blue);
-  transition: box-shadow 0.3s ease;
 }
 
-.logged-workout:hover {
-  box-shadow: var(--shadow-medium);
-}
-
-.logged-workout h3 {
+.progress-item h3 {
   margin-top: 0;
   color: var(--primary-blue);
 }
 
-.logged-workout p {
+.progress-item p {
   margin: 0.5rem 0;
   color: #666;
 }
 
-/* Success Message Styles */
-.success-message {
-  background-color: var(--success-green);
-  border: 1px solid var(--success-border);
-  color: var(--success-text);
+/* Success Message */
+.success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
   padding: 2rem;
   border-radius: 8px;
   text-align: center;
   margin: 2rem 0;
 }
 
-.success-message h3 {
-  color: var(--success-text);
+.success h3 {
+  color: #155724;
   margin-top: 0;
-}
-
-.action-links {
-  margin-top: 1.5rem;
-}
-
-.action-links p {
-  margin: 0.75rem 0;
 }
 
 /* Footer */
@@ -461,43 +362,21 @@ footer {
   margin-top: auto;
 }
 
-footer p {
-  margin: 0.5rem 0;
-}
-
 footer a {
   color: var(--white);
 }
 
-footer a:hover,
-footer a:focus {
+footer a:hover, footer a:focus {
   color: #ccc;
 }
 
-/* Images */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-img[loading="lazy"] {
-  transition: opacity 0.3s ease;
-}
-
-/* Loading state for images */
-img:not([src]) {
-  background-color: var(--soft-gray);
-  min-height: 200px;
-}
-
-/* Focus outline for accessibility */
-:focus-visible {
-  outline: var(--focus-outline);
-  outline-offset: 2px;
-}
-
-/* Utility classes */
 .visually-hidden {
   position: absolute !important;
   width: 1px;
@@ -510,42 +389,99 @@ img:not([src]) {
   border: 0;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Color swatch for color demo */
-.color-swatch {
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-left: 0.5rem;
-  vertical-align: middle;
-  border: 1px solid #ccc;
-  border-radius: 2px;
+/* Focus */
+:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Print styles */
-@media print {
-  header, footer, nav, .modal, button {
+/* Responsive */
+@media screen and (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .nav-brand {
+    margin-bottom: 0.5rem;
+  }
+  
+  #hamburger {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+  }
+  
+  .nav-list {
     display: none;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    background-color: var(--secondary-blue);
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+  
+  .nav-list.active {
+    display: flex;
+  }
+  
+  .nav-list a {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   main {
-    padding: 0;
-    max-width: none;
+    padding: 1rem;
   }
   
-  .workout-card {
-    break-inside: avoid;
-    box-shadow: none;
-    border: 1px solid #ccc;
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .hero {
+    padding: 2rem 1rem;
+  }
+  
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+  
+  .modal {
+    padding: 1rem;
+  }
+  
+  .modal-content {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    max-height: 85vh;
+  }
+  
+  .form {
+    padding: 1.5rem;
+  }
+  
+  .filter-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filter-form select {
+    min-width: auto;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .filter-form button {
+    width: 100%;
   }
 }

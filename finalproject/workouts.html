@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
   <title>Workouts — FitPulse</title>
   <meta name="description" content="Browse and filter detailed workout plans on FitPulse." />
   <meta name="author" content="Ty Pendleton" />
@@ -13,20 +18,18 @@
   <meta property="og:description" content="Browse and filter detailed workout plans on FitPulse." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://Tpendleton10.github.io/wdd231/finalproject/workouts.html" />
-  <meta property="og:image" content="images/fitpulse-og-image.png" />
+  <meta property="og:image" content="https://Tpendleton10.github.io/wdd231/finalproject/images/fitpulse-og-image.png" />
 
   <!-- Favicon -->
   <link rel="icon" href="images/gym.png" type="image/x-icon" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="styles/base.css" />
-  <link rel="stylesheet" href="styles/small.css" media="screen and (max-width: 600px)" />
-  <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 601px)" />
 </head>
 
 <body>
   <header>
-    <h1>FitPulse</h1>
+    <div class="nav-brand">FitPulse</div>
     <nav aria-label="Primary navigation">
       <button id="hamburger" aria-expanded="false" aria-controls="primary-navigation" aria-label="Menu">
         &#9776;
@@ -42,9 +45,11 @@
   </header>
 
   <main>
+    <h1>Workouts</h1>
+    
     <section aria-label="Workout filter">
       <h2>Filter Workouts</h2>
-      <form id="filter-form">
+      <form id="filter-form" class="filter-form">
         <label for="type-filter">Type:</label>
         <select id="type-filter" name="type-filter">
           <option value="all">All</option>
@@ -56,14 +61,14 @@
       </form>
     </section>
 
-    <section id="workouts-list" aria-label="Filtered workouts">
+    <section id="workouts-list" class="grid" aria-label="Filtered workouts">
       <!-- Dynamically generated workout cards filtered by type -->
     </section>
 
     <!-- Modal for workout details -->
-    <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc" hidden>
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc" hidden>
       <div class="modal-content">
-        <button id="modal-close" aria-label="Close modal">&times;</button>
+        <button id="modal-close" class="modal-close" aria-label="Close modal">&times;</button>
         <h3 id="modal-title">Workout Details</h3>
         <div id="modal-desc"></div>
       </div>

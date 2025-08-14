@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
   <title>FitPulse — Fitness Workout Tracker</title>
   <meta name="description" content="FitPulse helps you track workouts, explore exercise plans, and monitor your fitness progress." />
   <meta name="author" content="Ty Pendleton" />
@@ -13,20 +18,18 @@
   <meta property="og:description" content="Track workouts, explore exercise plans, and monitor your fitness progress." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://Tpendleton10.github.io/wdd231/finalproject/" />
-  <meta property="og:image" content="images/fitpulse-og-image.png" />
+  <meta property="og:image" content="https://Tpendleton10.github.io/wdd231/finalproject/images/fitpulse-og-image.png" />
 
   <!-- Favicon -->
   <link rel="icon" href="images/gym.png" type="image/x-icon" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="styles/base.css" />
-  <link rel="stylesheet" href="styles/small.css" media="screen and (max-width: 600px)" />
-  <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 601px)" />
 </head>
 
-<body>
+<body class="homepage">
   <header>
-    <h1>FitPulse</h1>
+    <div class="nav-brand">FitPulse</div>
     <nav aria-label="Primary navigation">
       <button id="hamburger" aria-expanded="false" aria-controls="primary-navigation" aria-label="Menu">
         &#9776;
@@ -42,24 +45,26 @@
   </header>
 
   <main>
-    <section id="hero" tabindex="-1">
+    <h1>FitPulse</h1>
+    
+    <section class="hero" tabindex="-1">
       <h2>Your Fitness Journey Starts Here</h2>
       <p>Explore workout plans, track your progress, and stay motivated with FitPulse.</p>
       <img src="images/hero.webp" alt="Workout Collage" loading="lazy" />
     </section>
 
-    <section id="workouts" aria-label="Workout plans">
+    <section aria-label="Workout plans">
       <h2>Featured Workout Plans</h2>
-      <div id="workouts-container" tabindex="0">
+      <div id="workouts-container" class="grid">
         <!-- Dynamic workout cards will be inserted here by JavaScript -->
       </div>
-      <p><a href="workouts.html" class="button">View All Workouts</a></p>
+      <p><a href="workouts.html" class="btn">View All Workouts</a></p>
     </section>
 
     <!-- Modal for workout details -->
-    <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc" hidden>
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc" hidden>
       <div class="modal-content">
-        <button id="modal-close" aria-label="Close modal">&times;</button>
+        <button id="modal-close" class="modal-close" aria-label="Close modal">&times;</button>
         <h3 id="modal-title">Workout Details</h3>
         <div id="modal-desc">
           <!-- Dynamic content about workout details will go here -->

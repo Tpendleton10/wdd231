@@ -1,4 +1,4 @@
-// main.js (ES Module) - Complete Updated Version
+// main.js - Updated for optimized CSS classes
 const workoutsUrl = './data/workouts.json';
 
 // Elements
@@ -50,7 +50,7 @@ function displayWorkouts(workouts) {
   
   // Using map array method for data processing
   container.innerHTML = workouts.map(workout => `
-    <article class="workout-card" tabindex="0" data-id="${workout.id}">
+    <article class="card" tabindex="0" data-id="${workout.id}">
       <img src="${workout.image}" alt="${workout.name} workout" loading="lazy" />
       <h3>${workout.name}</h3>
       <p><strong>Type:</strong> ${workout.type}</p>
@@ -102,7 +102,7 @@ function showModal(workoutId) {
     <ul>
       ${workout.exercises.map(exercise => `<li>${exercise}</li>`).join('')}
     </ul>
-    <button id="log-workout-btn" class="button">Log This Workout</button>
+    <button id="log-workout-btn" class="btn">Log This Workout</button>
   `;
 
   // Show modal - DOM manipulation
@@ -132,7 +132,7 @@ function closeModal() {
 // Attach event listeners to workout cards
 function attachCardEventListeners() {
   const detailButtons = document.querySelectorAll('.details-btn');
-  const workoutCards = document.querySelectorAll('.workout-card');
+  const workoutCards = document.querySelectorAll('.card');
   
   // Event handling for buttons
   detailButtons.forEach(btn => {
@@ -171,7 +171,7 @@ function loadProgress() {
   
   // Using map to process and display data
   progressContainer.innerHTML = loggedWorkouts.map(log => `
-    <article class="logged-workout">
+    <article class="progress-item">
       <h3>${log.name}</h3>
       <p><strong>Date:</strong> ${new Date(log.date).toLocaleDateString()}</p>
       <p><strong>Duration:</strong> ${log.duration} minutes</p>

@@ -3,17 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
   <title>Workout Log Submitted - FitPulse</title>
-  <link rel="stylesheet" href="styles/base.css" />
-  <link rel="stylesheet" href="styles/small.css" media="screen and (max-width: 600px)" />
-  <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 601px)" />
   <meta name="description" content="Your workout log submission confirmation." />
   <meta name="author" content="Ty Pendleton" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Workout Submitted — FitPulse" />
+  <meta property="og:description" content="Your workout log submission confirmation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://Tpendleton10.github.io/wdd231/finalproject/form-action.html" />
+  <meta property="og:image" content="https://Tpendleton10.github.io/wdd231/finalproject/images/fitpulse-og-image.png" />
+
+  <!-- Favicon -->
   <link rel="icon" href="images/gym.png" type="image/x-icon" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/base.css" />
 </head>
+
 <body>
   <header>
-    <h1>FitPulse</h1>
+    <div class="nav-brand">FitPulse</div>
     <nav aria-label="Primary navigation">
       <button id="hamburger" aria-expanded="false" aria-controls="primary-navigation" aria-label="Menu">
         &#9776;
@@ -29,7 +45,8 @@
   </header>
 
   <main>
-    <h2>Workout Log Submitted</h2>
+    <h1>Workout Log Submitted</h1>
+    
     <section id="submitted-data">
       <!-- Submitted form data will be shown here -->
     </section>
@@ -64,15 +81,15 @@
 
       const section = document.getElementById('submitted-data');
       section.innerHTML = `
-        <div class="success-message">
+        <div class="success">
           <h3>✅ Workout Successfully Logged!</h3>
           <p><strong>Date:</strong> ${new Date(date).toLocaleDateString()}</p>
           <p><strong>Workout Name:</strong> ${workoutName}</p>
           <p><strong>Duration:</strong> ${duration} minutes</p>
           <p><strong>Notes:</strong> ${notes}</p>
           <div class="action-links">
-            <p><a href="progress.html" class="button">View Your Progress</a></p>
-            <p><a href="form.html" class="button">Log Another Workout</a></p>
+            <p><a href="progress.html" class="btn">View Your Progress</a></p>
+            <p><a href="form.html" class="btn">Log Another Workout</a></p>
             <p><a href="index.html">Return to Home</a></p>
           </div>
         </div>
