@@ -1,6 +1,10 @@
 /* base.css - Optimized Version */
 
 /* CSS Variables */
+/* Critical CSS - Load first */
+body { font-family: Arial, sans-serif; }
+.hero { background-color: #0077b6; }
+
 :root {
   --primary-blue: #0077b6;
   --secondary-blue: #005f73;
